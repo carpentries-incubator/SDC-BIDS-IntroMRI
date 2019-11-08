@@ -1,6 +1,6 @@
 bids-validator==1.2.4
 datalad==0.11.8
-nibabel >=2.2.1
+nibabel==2.5.1
 numpy
 pandas
 pybids==0.9.5
