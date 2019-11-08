@@ -1,0 +1,20 @@
+name: intro_neuroimaging
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python>3.6
+  - jupyterlab
+  - pandas
+  - matplotlib
+  - pip:
+    - bids-validator
+    - datalad
+    - nibabel
+    - numpy
+    - pandas
+    - pybids
+    - hypothesis
+    - pipenv
+    - datapackage
+    - jupyter-repo2docker
