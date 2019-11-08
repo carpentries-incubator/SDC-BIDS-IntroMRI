@@ -3,15 +3,13 @@
 [![Create a Slack Account with us][create_slack_svg]][slack_heroku_invite]
 [![Slack Status][slack_channel_status]][slack_channel_url]
 
-An introduction to MRI.
+An introduction to magnetic resonance imaging analysis in Python.
 
 ## Why Python?
 
-Python is rapidly becoming the standard language for data analysis, visualization and automated workflow building. It is a free and open-source software that is relatively easy to pick up by new programmers. In addition, with Python packages such as `Jupyter` one can keep an interactive code journal of analysis - this is what we'll be using in the workshop, and is, in fact, what you are currently using to view this workshop! Using Jupyter notebooks allows you to keep a record of all the steps in your analysis, enabling transparency and ease of code sharing.
+Python is rapidly becoming the standard language for data analysis, visualization and automated workflow building. It is a free and open-source software that is relatively easy to pick up by new programmers. In addition, with Python packages such as `Jupyter` one can keep an interactive code journal of analysis - this is what we'll be using in the workshop. Using Jupyter notebooks allows you to keep a record of all the steps in your analysis, enabling transparency and ease of code sharing.
 
-Another advantage of Python is that it is maintained by a large user-base. Anyone can easily make their own Python packages for others to use. Therefore, there exists a *very* large codebase for you to take advantage of for your neuroimaging analysis; from basic statistical analysis and visualization tools to advanced machine learning and multivariate methods!
-
-We'll begin with a basic overview of MR data and then move into how we can work with MR data in Python:
+Another advantage of Python is that it is maintained by a large user-base. Anyone can easily make their own Python packages for others to use. Therefore, there exists a *very* large codebase for you to take advantage of for your neuroimaging analysis; from basic statistical analysis, to brain visualization tools, to advanced machine learning and multivariate methods!
 
 ## About the Lesson
 
@@ -27,9 +25,9 @@ This lesson teaches:
 | # |  Episode | Time | Question(s) |
 |--:|:---------|:----:|:------------|
 | 1 | [Neuroimaging Fundamentals][episode01] | 30 | How can I do the same operations on many different values? |
-| 2 | [MRI Datasets][episode02] | 30 | How can I store many values together? |
-| 3 | [Brain Imaging Data Structure][episode03] | 30 | How can I do the same operations on many different files? |
-| 4 | [Anatomy of NIfTI][episode04] | 30 | How can my programs do different things based on data values? |
+| 2 | [Brain Imaging Data Structure][episode02] | 30 | How can I do the same operations on many different files? |
+| 3 | [Open MRI Datasets][episode03] | 30 | How can I store many values together? |
+| 4 | [Anatomy of a NIfTI][episode04] | 30 | How is MRI data organized |
 
 ## Contributing
 
@@ -63,7 +61,7 @@ A list of contributors to the lesson can be found in [AUTHORS](AUTHORS)
 Instructional material from this lesson is made available under the Creative
 Commons Attribution (CC BY 4.0) license. Except where otherwise noted, example
 programs and software included as part of this lesson are made available under
-the MIT license. For more information, see [LICENSE.md](LICENSE.md).
+the MIT license. For more information, see [LICENSE](LICENSE.md).
 
 ## Citation
 
@@ -74,8 +72,8 @@ To cite this lesson, please consult with [CITATION](CITATION)
 [slack_channel_status]: https://img.shields.io/badge/Slack_Channel-neuroimaging-E01563.svg
 [slack_channel_url]: https://swcarpentry.slack.com/messages/CCJBHKCHZ
 [episode01]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/01-neuroimaging-fundamentals/index.html
-[episode02]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/02-mri-datasets/index.html
-[episode03]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/03-brain-imaging-data-structure/index.html
+[episode02]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/02-brain-imaging-data-structure/index.html
+[episode03]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/03-open-mri-datasets/index.html
 [episode04]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/04-anatomy-of-nifti/index.html
 [lesson-example]: https://carpentries.github.io/lesson-example
 [link_issues]: https://github.com/conp-pcno-training/SDC-BIDS-IntroMRI/issues
