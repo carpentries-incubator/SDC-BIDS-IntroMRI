@@ -2,6 +2,7 @@
 
 [![Create a Slack Account with us][create_slack_svg]][slack_heroku_invite]
 [![Slack Status][slack_channel_status]][slack_channel_url]
+[![Binder][binder_svg]][binder_url]
 
 An introduction to magnetic resonance imaging analysis in Python.
 
@@ -71,6 +72,8 @@ To cite this lesson, please consult with [CITATION](CITATION)
 [slack_heroku_invite]: https://swc-slack-invite.herokuapp.com
 [slack_channel_status]: https://img.shields.io/badge/Slack_Channel-neuroimaging-E01563.svg
 [slack_channel_url]: https://swcarpentry.slack.com/messages/CCJBHKCHZ
+[binder_svg]: https://mybinder.org/badge_logo.svg
+[binder_url]: https://mybinder.org/v2/gh/conp-pcno-training/SDC-BIDS-IntroMRI/gh-pages
 [episode01]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/01-neuroimaging-fundamentals/index.html
 [episode02]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/02-brain-imaging-data-structure/index.html
 [episode03]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/03-open-mri-datasets/index.html
