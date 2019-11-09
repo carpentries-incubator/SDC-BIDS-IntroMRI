@@ -26,9 +26,10 @@ This lesson teaches:
 | # |  Episode | Time | Question(s) |
 |--:|:---------|:----:|:------------|
 | 1 | [Neuroimaging Fundamentals][episode01] | 30 | How can I do the same operations on many different values? |
-| 2 | [Brain Imaging Data Structure][episode02] | 30 | How can I do the same operations on many different files? |
-| 3 | [Open MRI Datasets][episode03] | 30 | How can I store many values together? |
-| 4 | [Anatomy of a NIfTI][episode04] | 30 | How is MRI data organized |
+| 2 | [Anatomy of a NIfTI][episode02] | 30 | How is MRI data organized |
+| 3 | [Brain Imaging Data Structure][episode03] | 30 | How can I do the same operations on many different files? |
+| 4 | [Open MRI Datasets][episode04] | 30 | How can I store many values together? |
+
 
 ## Contributing
 
@@ -75,9 +76,9 @@ To cite this lesson, please consult with [CITATION](CITATION)
 [binder_svg]: https://mybinder.org/badge_logo.svg
 [binder_url]: https://mybinder.org/v2/gh/conp-pcno-training/SDC-BIDS-IntroMRI/gh-pages
 [episode01]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/01-neuroimaging-fundamentals/index.html
-[episode02]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/02-brain-imaging-data-structure/index.html
-[episode03]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/03-open-mri-datasets/index.html
-[episode04]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/04-anatomy-of-nifti/index.html
+[episode02]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/02-anatomy-of-nifti/index.html
+[episode03]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/03-brain-imaging-data-structure/index.html
+[episode04]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/04-open-mri-datasets/index.html
 [lesson-example]: https://carpentries.github.io/lesson-example
 [link_issues]: https://github.com/conp-pcno-training/SDC-BIDS-IntroMRI/issues
 [michael_joseph]: https://github.com/josephmje
