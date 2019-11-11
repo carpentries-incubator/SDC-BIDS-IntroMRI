@@ -6,17 +6,17 @@ title: Setup
 
 ### Install Python
 
-We use python version 3.6.0, but any newer version should also work (Python 2 versions haven't been tested). There are many methods to setting up a python environment but we'd recommend using some sort of virtual environment as to not break your system python install. Two methods (of many) are listed below:
+We use Python version 3.6.0, but any newer version should also work. There are many methods to setting up a Python environment but we'd recommend using some sort of virtual environment so as to not break your system Python install. Two methods (of many) are listed below:
 
 #### Method 1: Setting up conda environment (easiest) [Windows, Linux, MacOS]
-For easy set-up we recommend [Anaconda](https://www.anaconda.com/download/) to manage python packages for scientific computing. Once installed, setting up the python environment can be done quite easily:
+For easy set-up we recommend [Anaconda](https://www.anaconda.com/download/) to manage Python packages for scientific computing. Once installed, setting up the Python environment can be done quite easily:
 
 ##### Windows
 1. Install Anaconda Python version 3.7
 2. Open **Anaconda Navigator**
 3. Click on **Environments** on the left pane
-4. Click **Create** then type in <code>scwg2018_python_neuroimaging</code>
-5. In the <code>scwg2018_python_neuroimaging</code> entry click the play button then click **Open Terminal** 
+4. Click **Create** then type in `neuroimaging_venv`
+5. In the`neuroimaging_venv` entry, click the play button, then click **Open Terminal** 
 6. In terminal type: 
 ```
 conda install -y numpy pandas scipy scikit-learn matplotlib jupyter ipykernel nb_conda
@@ -24,7 +24,7 @@ conda install -y -c conda-forge awscli
 pip install nilearn nibabel
 ```
 7. Close the terminal, click on the play button again and open **Jupyter Notebook**
-8. Navigate to <code>scwg2018_python_neuroimaging</code> folder you downloaded earlier.
+8. Navigate to `neuroimaging_venv` folder you downloaded earlier.
 9. Done!
 
 ##### Linux and MacOS
