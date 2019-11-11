@@ -1,5 +1,6 @@
 bids-validator==1.2.4
 datalad==0.11.8
+matplotlib
 nibabel==2.5.1
 numpy
 pandas
