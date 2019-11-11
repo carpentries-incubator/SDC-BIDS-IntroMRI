@@ -30,7 +30,6 @@ This lesson teaches:
 | 3 | [Brain Imaging Data Structure][episode03] | 30 | How can I do the same operations on many different files? |
 | 4 | [Open MRI Datasets][episode04] | 30 | How can I store many values together? |
 
-
 ## Contributing
 
 We welcome all contributions to improve the lesson! Maintainers will do their best to help you if you have any
@@ -52,7 +51,6 @@ Current maintainers of this lesson are
 
 * [Michael Joseph][michael_joseph]
 * [Jerrold Jeyachandra][jerrold_jeyachandra]
-* [Erin Dickie][erin_dickie]
 
 ## Authors
 
@@ -83,4 +81,3 @@ To cite this lesson, please consult with [CITATION](CITATION)
 [link_issues]: https://github.com/conp-pcno-training/SDC-BIDS-IntroMRI/issues
 [michael_joseph]: https://github.com/josephmje
 [jerrold_jeyachandra]: https://github.com/jerdra
-[erin_dickie]: https://github.com/edickie
