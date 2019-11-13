@@ -25,10 +25,10 @@ This lesson teaches:
 
 | # |  Episode | Time | Question(s) |
 |--:|:---------|:----:|:------------|
-| 1 | [Neuroimaging Fundamentals][episode01] | 30 | How can I do the same operations on many different values? |
-| 2 | [Anatomy of a NIfTI][episode02] | 30 | How is MRI data organized |
-| 3 | [Brain Imaging Data Structure][episode03] | 30 | How can I do the same operations on many different files? |
-| 4 | [Open MRI Datasets][episode04] | 30 | How can I store many values together? |
+| 1 | [Neuroimaging Fundamentals][episode01] | 30 | What are the common neuroimaging modalities? |
+| 2 | [Anatomy of a NIfTI][episode02] | 30 | How is MRI data organized in a NIfTI file? |
+| 3 | [Brain Imaging Data Structure][episode03] | 30 | How can I organize my study? |
+| 4 | [Open MRI Datasets][episode04] | 30 | How can I download and query an MRI dataset? |
 
 ## Contributing
 
@@ -73,10 +73,10 @@ To cite this lesson, please consult with [CITATION](CITATION)
 [slack_channel_url]: https://swcarpentry.slack.com/messages/CCJBHKCHZ
 [binder_svg]: https://mybinder.org/badge_logo.svg
 [binder_url]: https://mybinder.org/v2/gh/conp-pcno-training/SDC-BIDS-IntroMRI/gh-pages
-[episode01]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/01-neuroimaging-fundamentals/index.html
-[episode02]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/02-anatomy-of-nifti/index.html
-[episode03]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/03-brain-imaging-data-structure/index.html
-[episode04]: https://conp-pcno-training.github.io/SDC-BIDS-IntroMRI/04-open-mri-datasets/index.html
+[episode01]: https://github.com/conp-pcno-training/SDC-BIDS-IntroMRI/blob/gh-pages/files/neuroimaging_analysis_at_scale.pptx
+[episode02]: https://github.com/conp-pcno-training/SDC-BIDS-IntroMRI/blob/gh-pages/code/02-anatomy-of-nifti/02-anatomy-of-nifti.ipynb
+[episode03]: https://github.com/conp-pcno-training/SDC-BIDS-IntroMRI/blob/gh-pages/files/neuroimaging_analysis_at_scale.pptx
+[episode04]: https://github.com/conp-pcno-training/SDC-BIDS-IntroMRI/blob/gh-pages/code/04-open-mri-datasets/04-open-mri-datasets.ipynb
 [lesson-example]: https://carpentries.github.io/lesson-example
 [link_issues]: https://github.com/conp-pcno-training/SDC-BIDS-IntroMRI/issues
 [michael_joseph]: https://github.com/josephmje
