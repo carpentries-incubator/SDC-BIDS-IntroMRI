@@ -5,9 +5,7 @@ USER root
 RUN apt-get update && \
     apt-get install -y ssh git man git-annex
 
-RUN pip install --no-cache-dir notebook==6.0.3
-
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir awscli==1.18.97 datalad==0.13.0 nibabel==3.1.1 notebook==6.0.3 numpy pandas pybids==0.11.1
 
 ARG NB_USER=jovyan
 ARG NB_UID=1000
