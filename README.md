@@ -72,7 +72,7 @@ To cite this lesson, please consult with [CITATION](CITATION)
 [slack_channel_status]: https://img.shields.io/badge/Slack_Channel-neuroimaging-E01563.svg
 [slack_channel_url]: https://swcarpentry.slack.com/messages/CCJBHKCHZ
 [binder_svg]: https://mybinder.org/badge_logo.svg
-[binder_url]: https://mybinder.org/v2/gh/conp-pcno-training/SDC-BIDS-IntroMRI/gh-pages
+[binder_url]: https://mybinder.org/v2/gh/carpentries-incubator/SDC-BIDS-IntroMRI.git/gh-pages
 [episode01]: https://github.com/conp-pcno-training/SDC-BIDS-IntroMRI/blob/gh-pages/files/neuroimaging_analysis_at_scale.pptx
 [episode02]: https://github.com/conp-pcno-training/SDC-BIDS-IntroMRI/blob/gh-pages/code/02-anatomy-of-nifti/02-anatomy-of-nifti.ipynb
 [episode03]: https://github.com/conp-pcno-training/SDC-BIDS-IntroMRI/blob/gh-pages/files/neuroimaging_analysis_at_scale.pptx
