@@ -1,0 +1,7 @@
+nibabel
+pybids
+datalad
+awscli
+bids-validator
+numpy
+pandas
