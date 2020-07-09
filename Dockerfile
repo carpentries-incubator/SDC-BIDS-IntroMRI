@@ -3,7 +3,7 @@ FROM jupyter/scipy-notebook:5197709e9f23
 USER root
 
 RUN apt-get update && \
-    apt-get install -y ssh git man git-annex=8.20200617
+    apt-get install -y ssh git man git-annex=6.20160511-1
 
 RUN pip install --no-cache-dir notebook==6.0.3
 
