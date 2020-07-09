@@ -1,10 +1,10 @@
 FROM jupyter/scipy-notebook:5197709e9f23
 
-RUN pip install --no-cache-dir notebook==5.*
+RUN pip install --no-cache-dir notebook==6.0.3
 
 RUN apt-get install git-annex
 
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 ARG NB_USER=jovyan
 ARG NB_UID=1000
