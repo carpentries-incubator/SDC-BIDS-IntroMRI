@@ -1,8 +1,8 @@
 FROM jupyter/scipy-notebook:5197709e9f23
 
-RUN pip install --no-cache-dir notebook==6.0.3
+RUN apt-get update && apt-get install -y ssh git man git-annex=8.20200617
 
-RUN apt-get install git-annex
+RUN pip install --no-cache-dir notebook==6.0.3
 
 RUN pip install --no-cache-dir -r requirements.txt
 
