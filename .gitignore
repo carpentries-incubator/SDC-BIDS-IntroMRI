@@ -9,5 +9,9 @@ _site
 .Rproj.user
 .Rhistory
 .RData
-.vscode/
-data/
+.bundle/
+.vendor/
+vendor/
+.docker-vendor/
+Gemfile.lock
+.*history
