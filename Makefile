@@ -1,3 +1,6 @@
+# Use /bin/bash instead of /bin/sh
+export SHELL = /bin/bash
+
 ## ========================================
 ## Commands for both workshop and lesson websites.
 
@@ -125,7 +128,7 @@ lesson-md : ${RMD_DST}
 _episodes/%.md: _episodes_rmd/%.Rmd
 	@bin/knit_lessons.sh $< $@
 
-## * lesson-check     : validate lesson Markdown
+# * lesson-check     : validate lesson Markdown
 lesson-check : lesson-fixme
 	@${PYTHON} bin/lesson_check.py -s . -p ${PARSER} -r _includes/links.md
 
@@ -146,7 +149,7 @@ lesson-files :
 
 ## * lesson-fixme     : show FIXME markers embedded in source files
 lesson-fixme :
-	@grep --fixed-strings --word-regexp --line-number --no-messages FIXME ${MARKDOWN_SRC} || true
+	@fgrep -i -n FIXME ${MARKDOWN_SRC} || true
 
 ##
 ## IV. Auxililary (plumbing) commands
