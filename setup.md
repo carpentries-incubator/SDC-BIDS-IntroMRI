@@ -4,93 +4,143 @@ title: Setup
 
 {% include links.md %}
 
-### Install Python
+## Overview
 
-We use Python version 3.6.0, but any newer version should also work. There are many methods to setting up a Python environment but we'd recommend using some sort of virtual environment so as to not break your system Python install. Two methods (of many) are listed below:
+This lesson is designed to be run on either a personal computer or in an interactive environment on [Binder][binder-repo].
+All of the software and data used in this lesson are freely available online, and instructions on how to obtain them are provided below.
 
-#### Method 1: Setting up conda environment (easiest) [Windows, Linux, MacOS]
-For easy set-up we recommend [Anaconda](https://www.anaconda.com/download/) to manage Python packages for scientific computing. Once installed, setting up the Python environment can be done quite easily:
+## Install Python
 
-##### Windows
-1. Install Anaconda Python version 3.7
-2. Open **Anaconda Navigator**
-3. Click on **Environments** on the left pane
-4. Click **Create** then type in `neuroimaging_venv`
-5. In the`neuroimaging_venv` entry, click the play button, then click **Open Terminal** 
-6. In terminal type: 
-```
-conda install -y numpy pandas scipy scikit-learn matplotlib jupyter ipykernel nb_conda
-conda install -y -c conda-forge awscli
-pip install nilearn nibabel
-```
-7. Close the terminal, click on the play button again and open **Jupyter Notebook**
-8. Navigate to `neuroimaging_venv` folder you downloaded earlier.
-9. Done!
+In this lesson, we will be using Python 3 with some of its most popular scientific and neuroimaging libraries.
+Although one can install a plain-vanilla Python and all required libraries by hand, we recommend installing [Anaconda][anaconda-website], a Python distribution that comes with everything we need for the lesson.
+Detailed installation instructions for various operating systems can be found on The Carpentries [template website for workshops][anaconda-instructions] and in the [Anaconda documentation][anaconda-install].
 
-##### Linux and MacOS
+## Install dcm2niix
 
-After installing Anaconda, open terminal and type: 
+We will be using the dcm2niix software package for converting neuroimaging data from the DICOM format that is exported from the MRI scanner to the NIfTI format, which is much easier to work with. Detailed installation instructions for various operating systems can be found on the [dcm2niix README] [dcm2niix-install].
 
-```
-cd scwg2018_python_neuroimaging
-conda create -p ./scwg2018_nilearn
-source activate $(pwd)/scwg2018_nilearn
-conda install numpy pandas scipy scikit-learn matplotlib jupyter ipykernel nb_conda
-conda install -c conda-forge awscli
-pip install nilearn nibabel
+## Install DataLad
 
-```
-#### Method 2: Using pyenv (my favourite) [Linux, MacOS]
-An alternative method uses [pyenv](https://github.com/pyenv/pyenv) with [pyenv virtualenv](https://github.com/pyenv/pyenv-virtualenv). This is a favourite because it seamlessly integrates multiple python versions and environments into your system while maintaining use of pip (instead of conda).
-```
-cd scwg2018_python_neuroimaging
-pyenv virtualenv 3.6.0 scwg2018_nilearn
-echo scwg2018_nilearn > .python-version
-pip install --requirement requirements.txt
-```
+In order to obtain the lesson materials, we will be using DataLad, a tool for managing and version controlling large datasets. Detailed installation instructions for various operating systems can be found in the [Datalad Handbook] [datalad-install].
 
-### Obtain lesson materials
+## Obtain lesson materials
 
-This tutorial uses data derived from the **UCLA Consortium for Neuropsychiatric Phenomics LA5c Study [1]**.
+`datalad install ///openneuro/ds000030`
 
-To acquire the data we use [Amazon AWS S3](https://aws.amazon.com/). You can set up an account using the link. Then you'll need to set up the **awscli** python tool using your AWS account credentials (more info: [Amazon AWS CLI](https://aws.amazon.com/cli/))
-```
-aws configure
-AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
-AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-Default region name [None]: ca-central-1
-Default output format [None]: ENTER
-```
-To download (**warning: large download size!**) the subset of the data used for the tutorial:
+## Launch Python interface
 
-```
-cd scwg2018_python_neuroimaging
+To start working with Python, we need to launch a program that will interpret and execute our Python
+commands. Below we list several options. If you don't have a preference, proceed with the top
+option in the list that is available on your machine. Otherwise, you may use any interface you like.
 
-# download T1w scans
-cat download_list | \
-  xargs -I '{}' aws s3 sync --no-sign-request \
-  s3://openneuro/ds000030/ds000030_R1.0.5/uncompressed/{}/anat \
-  ./data/ds000030/{}/anat
+## Option A: Jupyter Notebook
 
-# download resting state fMRI scans
-cat download_list | \
-  xargs -I '{}' aws s3 sync --no-sign-request \
-  s3://openneuro/ds000030/ds000030_R1.0.5/uncompressed/{}/func \
-  ./data/ds000030/{}/func \
-  --exclude '*' \
-  --include '*task-rest_bold*'
+A Jupyter Notebook provides a browser-based interface for working with Python.
+If you installed Anaconda, you can launch a notebook in two ways:
 
-# download fmriprep preprocessed anat data
-cat download_list | \
-  xargs -I '{}' aws s3 sync --no-sign-request \
-  s3://openneuro/ds000030/ds000030_R1.0.5/uncompressed/derivatives/fmriprep/{}/anat \
-  ./data/ds000030/derivatives/fmriprep/{}/anat
+> ## Anaconda Navigator
+>
+> 1. Launch Anaconda Navigator.
+> It might ask you if you'd like to send anonymized usage information to Anaconda developers:
+> ![Anaconda Navigator first launch](../fig/anaconda-navigator-first-launch.png)
+> Make your choice and click "Ok, and don't show again" button.
+> 2. Find the "Notebook" tab and click on the "Launch" button:
+> ![Anaconda Navigator Notebook launch](../fig/anaconda-navigator-notebook-launch.png)
+> Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the
+> contents of your Home (or User) folder.
+> 3. Navigate to the `data` directory by clicking on the directory names leading to it:
+> `Desktop`, `swc-python`, then `data`:
+> ![Anaconda Navigator Notebook directory](../fig/jupyter-notebook-data-directory.png)
+> 4. Launch the notebook by clicking on the "New" button and then selecting "Python 3":
+> ![Anaconda Navigator Notebook directory](../fig/jupyter-notebook-launch-notebook.png)
+{: .solution}
 
-# download fmriprep preprocessed func data
-cat download_list | \
-  xargs -I '{}' aws s3 sync --no-sign-request \
-  s3://openneuro/ds000030/ds000030_R1.0.5/uncompressed/derivatives/fmriprep/{}/func \
-  ./data/ds000030/derivatives/fmriprep/{}/func \
-  --exclude '*' \
-  --include '*task-rest_bold*'
-```
+> ## Command line (Terminal)
+>
+> 1\. Navigate to the `data` directory:
+>
+> > ## Unix shell
+> > If you're using a Unix shell application, such as Terminal app in macOS, Console or Terminal
+> > in Linux, or [Git Bash][gitbash] on Windows, execute the following command:
+> > ~~~
+> > cd ~/Desktop/swc-python/data
+> > ~~~
+> > {: .language-bash}
+> {: .solution}
+>
+> > ## Command Prompt (Windows)
+> > On Windows, you can use its native Command Prompt program.  The easiest way to start it up is
+> > pressing <kbd>Windows Logo Key</kbd>+<kbd>R</kbd>, entering `cmd`, and hitting
+> > <kbd>Return</kbd>. In the Command Prompt, use the following command to navigate to
+> > the `data` folder:
+> > ~~~
+> > cd /D %userprofile%\Desktop\swc-python\data
+> > ~~~
+> > {: .source}
+> {: .solution}
+>
+> 2\. Start Jupyter server
+>
+> > ## Unix shell
+> > ~~~
+> > jupyter notebook
+> > ~~~
+> > {: .language-bash}
+> {: .solution}
+>
+> > ## Command Prompt (Windows)
+> > ~~~
+> > python -m notebook
+> > ~~~
+> > {: .source}
+> {: .solution}
+>
+> 3\. Launch the notebook by clicking on the "New" button on the right and selecting "Python 3"
+> from the drop-down menu:
+> ![Anaconda Navigator Notebook directory](../fig/jupyter-notebook-launch-notebook2.png)
+{: .solution}
+
+&nbsp; <!-- vertical spacer -->
+
+## Option B: IPython interpreter
+
+IPython is an alternative solution situated somewhere in between the plain-vanilla Python
+interpreter and Jupyter Notebook. It provides an interactive command-line based interpreter with
+various convenience features and commands.  You should have IPython on your system if you installed
+[Anaconda][anaconda-instructions].
+
+To start using IPython, execute:
+~~~
+ipython
+~~~
+{: .source}
+
+&nbsp; <!-- vertical spacer -->
+
+## Option C: plain-vanilla Python interpreter
+
+To launch a plain-vanilla Python interpreter, execute:
+~~~
+python
+~~~
+{: .source}
+
+If you are using [Git Bash on Windows][gitbash], you have to call Python _via_ `winpty`:
+~~~
+winpty python
+~~~
+{: .source}
+
+## Install Python Packages
+
+`pip install nibabel pybids`
+
+[anaconda-install]: https://docs.anaconda.com/anaconda/install
+[anaconda-instructions]: https://carpentries.github.io/workshop-template/#python
+[anaconda-website]: https://www.anaconda.com/
+[binder-repo]: https://mybinder.org/v2/gh/carpentries-incubator/SDC-BIDS-IntroMRI.git/gh-pages
+[datalad-install]: http://handbook.datalad.org/en/latest/intro/installation.html
+[dcm2niix-install]: https://github.com/rordenlab/dcm2niix#install
+[gitbash]: https://gitforwindows.org
+[zipfile1]: {{ page.root }}/data/python-novice-inflammation-data.zip
+[zipfile2]: {{ page.root }}/code/python-novice-inflammation-code.zip
