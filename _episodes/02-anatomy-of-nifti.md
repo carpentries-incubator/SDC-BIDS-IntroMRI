@@ -156,7 +156,8 @@ t1_hdr['<key_name>']
 ~~~
 {: .language-python}
 
-> ## Extract the value of pixdim from `t1_hdr`
+> ## Extract values from the NIfTI header
+> Extract the value of pixdim from `t1_hdr`
 > ~~~
 > t1_hdr['pixdim']
 > ~~~
@@ -282,7 +283,7 @@ numpy.ndarray
 The data is a multidimensional **array** representing the image data. In Python, an array is used to store lists of numerical data into something like a table.
 
 > ## Check out attributes of the array
-> How can we see the number of dimensions in the `t1_data` array? What about the how big each dimension is (shape)? Once again, all of the attributes of the array can be seen by typing `t1_data.` followed by <kbdTab</kbd>.
+> How can we see the number of dimensions in the `t1_data` array? Once again, all of the attributes of the array can be seen by typing `t1_data.` followed by <kbdTab</kbd>.
 > ~~~
 > t1_data.ndim
 > ~~~
@@ -296,35 +297,72 @@ The data is a multidimensional **array** representing the image data. In Python,
 > `t1_data` contains 3 dimensions.Y ou can think of the data as a 3D version of a picture (more accurately, a volume).
 > ![](../fig/numpy_arrays.png)
 > {: .solution}
+>   
+> While typical 2D pictures are made out of squares called **pixels**, a 3D MR image is made up of 3D cubes called **voxels**.
+> ![](../fig/mri_slices.jpg)  
+> What about the how big each dimension is (shape)?
+> ~~~
+> t1_data.shape
+> ~~~
+> {: .language-python}
+> 
+> > ## Solution
+> > ~~~
+> > (57, 67, 56)
+> > ~~~
+> {: .solution}
 {: .challenge}
 
-EXERCISE: Let's check out some attributes of the array. 
+The 3 numbers given here represent the number of values *along a respective dimension (x,y,z)*. This brain was scanned in 57 slices with a resolution of 67 x 56 voxels per slice. That means there are:  
 
-t1_data contains 3 dimensions. 
-
-While typical 2D pictures are made out of squares called pixels, a 3D MR image is made up of 3D cubes called voxels.
-
-
-
-The 3 numbers given here represent the number of values along a respective dimension (x,y,z). This brain was scanned in 57 slices with a resolution of 67 x 56 voxels per slice. That means there are:
-$$x * y * z = value$$$$ 57 * 67 * 56 = 213864$$
+$57 * 67 * 56 = 213864$
 
 voxels in total!
 
 Let's see the type of data inside of the array.
 
-This tells us that each element in the array (or voxel) is a floating-point number.
+~~~
+t1_data.dtype
+~~~
+{: .language-python}
+
+~~~
+dtype('float64')
+~~~
+
+This tells us that each element in the array (or voxel) is a floating-point number.  
 The data type of an image controls the range of possible intensities. As the number of possible values increases, the amount of space the image takes up in memory also increases.
+
+~~~
+import numpy as np
+print(np.min(t1_data))
+print(np.max(t1_data))
+~~~
+{: .language-python}
+
+~~~
+6.678363800048828
+96.55541983246803
+~~~
 
 For our data, the range of intensity values goes from 0 (black) to more positive digits (whiter).
 
 How do we examine what value a particular voxel is? We can inspect the value of a voxel by selecting an index as follows:
 
-data[x,y,z]
+`data[x,y,z]`
 
 So for example we can inspect a voxel at coordinates (10,20,3) by doing the following:
 
-NOTE: Python uses zero-based indexing. The first item in the array is item 0. The second item is item 1, the third is item 2, etc.
+~~~
+t1_data[9, 19, 2]
+~~~
+{: .language-python}
+
+~~~
+32.40787395834923
+~~~
+
+**NOTE**: Python uses **zero-based indexing**. The first item in the array is item 0. The second item is item 1, the third is item 2, etc.
 
 This yields a single value representing the intensity of the signal at a particular voxel! Next we'll see how to not just pull one voxel but a slice or an array of voxels for visualization and analysis!
 
@@ -332,68 +370,118 @@ This yields a single value representing the intensity of the signal at a particu
 
 Slicing does exactly what it seems to imply. Giving our 3D volume, we pull out a 2D slice of our data. Here's an example of slicing from left to right (sagittal slicing):
 
-This gif is a series of 2D images or slices moving from left to right.
+![](../fig/T1w.gif)
+
+This gif is a series of 2D images or **slices** moving from left to right.
 
 Let's pull the 10th slice in the x axis.
 
-This is similar to the indexing we did before to pull out a single voxel. However, instead of providing a value for each axis, the : indicates that we want to grab all values from that particular axis.
+~~~
+x_slice = t1_data[9:, :, :]
+~~~
+{: .language-python}
 
-EXERCISE: Now try selecting the 20th slice from the y axis.
+This is similar to the indexing we did before to pull out a single voxel. However, instead of providing a value for each axis, the `:` indicates that we want to grab *all* values from that particular axis.
 
-Finally try grabbing the 3rd slice from the z axis.
+> ## Slicing MRI Data
+> Now try selecting the 20th slice from the y axis.
+>
+> > ## Solution
+> > ~~~
+> > y_slice = t1_data[:, 19, :]
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+> 
+> Finally, try grabbing the 3rd slice from the z axis
+> 
+> > ## Solution
+> > ~~~
+> > z_slice = t1_data[:, :, 2]
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
 
 We've been slicing and dicing brain images but we have no idea what they look like! In the next section we'll show you how you can visualize brain slices!
 
 ## Visualizing
 
-We previously inspected the signal intensity of the voxel at coordinates (10,20,3). Let's see what out data looks like when we slice it at this location. We've already indexed the data at each x, y, and z axis. Let's use matplotlib.
+We previously inspected the signal intensity of the voxel at coordinates (10,20,3). Let's see what out data looks like when we slice it at this location. We've already indexed the data at each x, y, and z axis. Let's use `matplotlib`.
+
+~~~
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+slices = [x_slice, y_slice, z_slice]
+
+fig, axes = plt.subplots(1, len(slices))
+for i, slice in enumerate(slices):
+    axes[i].imshow(slice.T, cmap="gray", origin="lower")
+~~~
+{: .language-python}
 
 Now, we're going to step away from discussing our data and talk about the final important attribute of a NIfTI.
 
-### 3. Affine: tells the position of the image array data in a reference space
+### 3. [Affine](https://nipy.org/nibabel/coordinate_systems.html): tells the position of the image array data in a reference space
 
-The final important piece of metadata associated with an image file is the affine matrix. Below is the affine matrix for our data.
+The final important piece of metadata associated with an image file is the **affine matrix**. Below is the affine matrix for our data.
+
+~~~
+t1_affine = t1_img.affine
+t1_affine
+~~~
+{: .language-python}
+
+~~~
+array([[  2.75,   0.  ,   0.  , -78.  ],
+       [  0.  ,   2.75,   0.  , -91.  ],
+       [  0.  ,   0.  ,   2.75, -91.  ],
+       [  0.  ,   0.  ,   0.  ,   1.  ]])
+~~~
 
 To explain this concept, recall that we referred to coordinates in our data as (x,y,z) coordinates such that:
 
-    x is the first dimension of t1_data
-    y is the second dimension of t1_data
-    z is the third dimension of t1_data
+* x is the first dimension of `t1_data`
+* y is the second dimension of `t1_data`
+* z is the third dimension of `t1_data`
 
-Although this tells us how to access our data in terms of voxels in a 3D volume, it doesn't tell us much about the actual dimensions in our data (centimetres, right or left, up or down, back or front). The affine matrix allows us to translate between voxel coordinates (x,y,z) and world space coordinates in (left/right,bottom/top,back/front). An important thing to note is that in reality in which order you have:
+Although this tells us how to access our data in terms of voxels in a 3D volume, it doesn't tell us much about the actual dimensions in our data (centimetres, right or left, up or down, back or front). The affine matrix allows us to translate between *voxel coordinates* in (x,y,z) and *world space coordinates* in (left/right,bottom/top,back/front). An important thing to note is that in reality in which order you have:
 
-    left/right
-    bottom/top
-    back/front
+* left/right
+* bottom/top
+* back/front
 
 Depends on how you've constructed the affine matrix, but for the data we're dealing with it always refers to:
 
-    Right
-    Anterior
-    Superior
+* Right
+* Anterior
+* Superior
 
-Applying the affine matrix (t1_affine) is done through using a linear map (matrix multiplication) on voxel coordinates (defined in t1_data).
+Applying the affine matrix (`t1_affine`) is done through using a *linear map* (matrix multiplication) on voxel coordinates (defined in `t1_data`).
+
+![](../fig/coordinate_systems.png)
 
 The concept of an affine matrix may seem confusing at first but an example might help gain an intuition:
 
 Suppose we have two voxels located at the the following coordinates:
-$$(15,2,90)$$$$(64,100,2)$$
+$(64,100,2)$
 
-And we wanted to know what the distances between these two voxels are in terms of real world distances (millimetres). This information cannot be derived from using voxel coordinates so we turn to the affine matrix.
+And we wanted to know what the distances between these two voxels are in terms of real world distances (millimetres). This information cannot be derived from using voxel coordinates so we turn to the **affine matrix**.
 
-Now, the affine matrix we'll be using happens to be encoded in RAS. That means once we apply the matrix our coordinates are as follows:
+Now, the affine matrix we'll be using happens to be encoded in **RAS**. That means once we apply the matrix our coordinates are as follows:
 $$(\text{Right},\text{Anterior},\text{Superior})$$
 
 So increasing a coordinate value in the first dimension corresponds to moving to the right of the person being scanned.
 
 Applying our affine matrix yields the following coordinates:
-$$(90.23,0.2,2.15)$$$$(10.25,30.5,9.2)$$
+$(10.25,30.5,9.2)$
 
 This means that:
 
-    Voxel 1 is $90.23-10.25= 79.98$ in the R axis. Positive values mean move right
-    Voxel 1 is $0.2-30.5= -30.3$ in the A axis. Negative values mean move posterior
-    Voxel 1 is $2.15-9.2= -7.05$ in the S axis. Negatve values mean move inferior
+* Voxel 1 is $90.23-10.25= 79.98$ in the R axis. Positive values mean move right
+* Voxel 1 is $0.2-30.5= -30.3$ in the A axis. Negative values mean move posterior
+* Voxel 1 is $2.15-9.2= -7.05$ in the S axis. Negatve values mean move inferior
 
 This covers the basics of how NIfTI data and metadata are stored and organized in the context of Python. In the next segment we'll talk a bit about an increasingly important component of MR data analysis - data organization. This is a key component to reproducible analysis and so we'll spend a bit of time here.
 
