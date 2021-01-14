@@ -5,53 +5,302 @@ exercises: 5
 questions:
 - ""
 objectives:
-- "Introduce Python data type"
+- "Introduce Python data types"
 - Load a NIfTI file into Python and understand how data is stored
 - View and manipulate image data
 keypoints:
 - ""
 ---
 
-In the last lesson, we introduced the NIfTI. NIfTI is one of the most ubiquitous file formats for storing neuroimaging data. We'll cover a few details to get started working with them. If you're interested in learning more about NIfTI images, we highly recommend this blog post about the NIfTI format.
+In the last lesson, we introduced the NIfTI. NIfTI is one of the most ubiquitous file formats for storing neuroimaging data. We'll cover a few details to get started working with them. If you're interested in learning more about NIfTI images, we highly recommend [this blog post](https://brainder.org/2012/09/23/the-nifti-file-format/) about the NIfTI format.
 
 ## Reading NIfTI Images
 
-NiBabel is a Python package for reading and writing neuroimaging data. To learn more about how NiBabel handles NIfTIs, check out the Working with NIfTI images page of the NiBabel documentation.
+[NiBabel](https://nipy.org/nibabel/) is a Python package for reading and writing neuroimaging data. To learn more about how NiBabel handles NIfTIs, check out the [Working with NIfTI images](https://nipy.org/nibabel/nifti_images.html) page of the NiBabel documentation.
 
-First, use the load() function to create a NiBabel image object from a NIfTI file. We'll load in an example T1w image from the zip file we just downloaded.
+~~~
+import nibabel as nib
+~~~
+{: .language-python}
 
-Loading in a NIfTI file with nibabel gives us a special type of data object which encodes all the information in the file. Each bit of information is called an attribute in Python's terminology. To see all of these attributes, type t1_img. and Tab.
+First, use the `load()` function to create a NiBabel image object from a NIfTI file. We'll load in an example T1w image from the zip file we just downloaded.
+
+~~~
+t1_img = nib.load("../../../data/someones_anatomy.nii.gz")
+~~~
+{: .language-python}
+
+Loading in a NIfTI file with `NiBabel` gives us a special type of data object which encodes all the information in the file. Each bit of information is called an **attribute** in Python's terminology. To see all of these attributes, type `t1_img.` followed by <kbd>Tab</kbd>.
 
 There are three main attributes that we'll discuss today:
 
-### 1. Header: contains metadata about the image, such as image dimensions, data type, etc.
+### 1. [Header](https://nipy.org/nibabel/nibabel_images.html#the-image-header): contains metadata about the image, such as image dimensions, data type, etc.
 
-t1_hdr is a Python dictionary. Dictionaries are containers that hold pairs of objects - keys and values. Let's take a look at all of the keys. Similar to t1_img in which attributes can be accessed by typing t1_img. and hitting Tab, you can do the same with t1_hdr. In particular, we'll be using a method belonging to t1_hdr that will allow you to view the keys associated with it.
+~~~
+t1_hdr = t1_img.header
+print(t1_hdr)
+~~~
+{: .language-python}
 
-Notice that methods require you to include () at the end of them whereas attributes do not. The key difference between a method and an attribute is:
+~~~
+<class 'nibabel.nifti1.Nifti1Header'> object, endian='<'
+sizeof_hdr      : 348
+data_type       : b''
+db_name         : b''
+extents         : 0
+session_error   : 0
+regular         : b''
+dim_info        : 0
+dim             : [ 3 57 67 56  1  1  1  1]
+intent_p1       : 0.0
+intent_p2       : 0.0
+intent_p3       : 0.0
+intent_code     : none
+datatype        : uint8
+bitpix          : 8
+slice_start     : 0
+pixdim          : [1.   2.75 2.75 2.75 1.   1.   1.   1.  ]
+vox_offset      : 0.0
+scl_slope       : nan
+scl_inter       : nan
+slice_end       : 0
+slice_code      : unknown
+xyzt_units      : 2
+cal_max         : 0.0
+cal_min         : 0.0
+slice_duration  : 0.0
+toffset         : 0.0
+glmax           : 0
+glmin           : 0
+descrip         : b''
+aux_file        : b''
+qform_code      : mni
+sform_code      : mni
+quatern_b       : 0.0
+quatern_c       : 0.0
+quatern_d       : 0.0
+qoffset_x       : -78.0
+qoffset_y       : -91.0
+qoffset_z       : -91.0
+srow_x          : [  2.75   0.     0.   -78.  ]
+srow_y          : [  0.     2.75   0.   -91.  ]
+srow_z          : [  0.     0.     2.75 -91.  ]
+intent_name     : b''
+magic           : b'n+1'
+~~~
 
-    Attributes are stored values kept within an object
-    Methods are processes that we can run using the object. Usually a method takes attributes, performs an operation on them, then returns it for you to use.
+`t1_hdr` is a Python **dictionary**. Dictionaries are containers that hold pairs of objects - keys and values. Let's take a look at all of the keys. Similar to `t1_img` in which attributes can be accessed by typing `t1_img.` followed by <kbd>Tab</kbd>, you can do the same with `t1_hdr`. In particular, we'll be using a **method** belonging to `t1_hdr` that will allow you to view the keys associated with it.
 
-When you type in t1_img. followed by Tab, you'll see that attributes are highlighted in orange and methods highlighted in blue .
+~~~
+t1_hdr.keys()
+~~~
+{: .language-python}
 
-The output above is a list of keys you can use from t1_hdr to access values. We can access the value stored by a given key by typing:
+~~~
+['sizeof_hdr',
+ 'data_type',
+ 'db_name',
+ 'extents',
+ 'session_error',
+ 'regular',
+ 'dim_info',
+ 'dim',
+ 'intent_p1',
+ 'intent_p2',
+ 'intent_p3',
+ 'intent_code',
+ 'datatype',
+ 'bitpix',
+ 'slice_start',
+ 'pixdim',
+ 'vox_offset',
+ 'scl_slope',
+ 'scl_inter',
+ 'slice_end',
+ 'slice_code',
+ 'xyzt_units',
+ 'cal_max',
+ 'cal_min',
+ 'slice_duration',
+ 'toffset',
+ 'glmax',
+ 'glmin',
+ 'descrip',
+ 'aux_file',
+ 'qform_code',
+ 'sform_code',
+ 'quatern_b',
+ 'quatern_c',
+ 'quatern_d',
+ 'qoffset_x',
+ 'qoffset_y',
+ 'qoffset_z',
+ 'srow_x',
+ 'srow_y',
+ 'srow_z',
+ 'intent_name',
+ 'magic']
+~~~
 
+Notice that **methods** require you to include () at the end of them whereas **attributes** do not. The key difference between a method and an attribute is:
+
+* Attributes are stored *values* kept within an object  
+* Methods are *processes* that we can run using the object. Usually a method takes attributes, performs an operation on them, then returns it for you to use.  
+
+When you type in `t1_img.` followed by <kbd>Tab</kbd>, you'll see that attributes are highlighted in orange and methods highlighted in blue.
+
+The output above is a list of **keys** you can use from `t1_hdr` to access **values**. We can access the value stored by a given key by typing:
+
+~~~
 t1_hdr['<key_name>']
+~~~
+{: .language-python}
 
-EXERCISE: Extract the value of pixdim from t1_hdr
+> ## Extract the value of pixdim from `t1_hdr`
+> ~~~
+> t1_hdr['pixdim']
+> ~~~
+> {: .language-python}
+>
+> > ## Solution
+> > ~~~
+> > array([1.  , 2.75, 2.75, 2.75, 1.  , 1.  , 1.  , 1.  ], dtype=float32)
+> > ~~~
+> > {: .output}
+> {: .solution}
+{: .challenge}
 
 ### 2. Data
 
-As you've seen above, the header contains useful information that gives us information about the properties (metadata) associated with the MR data we've loaded in. Now we'll move in to loading the actual image data itself. We can achieve this by using the method called t1_img.get_fdata().
+As you've seen above, the header contains useful information that gives us information about the properties (metadata) associated with the MR data we've loaded in. Now we'll move in to loading the actual *image data itself*. We can achieve this by using the method called `t1_img.get_fdata()`.
 
-What type of data is this exactly? We can determine this by calling the type() function on t1_data.
+~~~
+t1_data = t1_img.get_fdata()
+t1_data
+~~~
+{: .language-python}
 
-The data is a multidimensional array representing the image data. In Python, an array is used to store lists of numerical data into something like a table.
+~~~
+array([[[ 8.79311806,  8.79311806,  8.79311806, ...,  7.73574093,
+          7.73574093,  7.38328189],
+        [ 8.79311806,  9.1455771 ,  8.79311806, ...,  8.08819997,
+          8.08819997,  8.08819997],
+        [ 9.1455771 ,  8.79311806,  8.79311806, ...,  8.44065902,
+          8.44065902,  8.44065902],
+        ...,
+        [ 8.08819997,  8.44065902,  8.08819997, ...,  7.38328189,
+          7.38328189,  7.38328189],
+        [ 8.08819997,  8.08819997,  8.08819997, ...,  7.73574093,
+          7.38328189,  7.38328189],
+        [ 8.08819997,  8.08819997,  8.08819997, ...,  7.38328189,
+          7.38328189,  7.03082284]],
 
-EXERCISE: Let's check out some attributes of the array. How can we see the number of dimensions in the t1_data array? What about the how big each dimension is (shape)? Once again, all of the attributes of the array can be seen by typing t1_data. and Tab.
+       [[ 8.79311806,  9.1455771 ,  8.79311806, ...,  7.73574093,
+          7.38328189,  7.38328189],
+        [ 8.79311806,  9.1455771 ,  9.1455771 , ...,  8.08819997,
+          7.73574093,  8.08819997],
+        [ 8.79311806,  9.49803615,  9.1455771 , ...,  8.44065902,
+          8.44065902,  8.44065902],
+        ...,
+        [ 8.08819997,  8.08819997,  8.08819997, ...,  7.38328189,
+          7.38328189,  7.03082284],
+        [ 8.08819997,  8.08819997,  8.08819997, ...,  7.38328189,
+          7.38328189,  7.38328189],
+        [ 8.08819997,  8.08819997,  8.08819997, ...,  7.38328189,
+          7.38328189,  7.73574093]],
 
-t1_data contains 3 dimensions. You can think of the data as a 3D version of a picture (more accurately, a volume).
+       [[ 9.1455771 ,  9.1455771 ,  8.79311806, ...,  7.73574093,
+          7.38328189,  7.03082284],
+        [ 9.1455771 ,  9.49803615,  9.1455771 , ...,  8.08819997,
+          7.73574093,  7.38328189],
+        [ 9.1455771 ,  9.49803615,  9.1455771 , ...,  8.08819997,
+          8.08819997,  8.08819997],
+        ...,
+        [ 8.08819997,  8.44065902,  8.44065902, ...,  7.73574093,
+          7.38328189,  7.38328189],
+        [ 8.44065902,  8.08819997,  8.44065902, ...,  7.38328189,
+          7.38328189,  7.38328189],
+        [ 8.08819997,  8.08819997,  8.08819997, ...,  7.38328189,
+          7.38328189,  7.38328189]],
+
+       ...,
+
+       [[ 9.49803615,  9.85049519,  9.85049519, ...,  7.38328189,
+          7.38328189,  7.03082284],
+        [ 9.85049519,  9.85049519,  9.85049519, ...,  7.38328189,
+          7.38328189,  7.73574093],
+        [ 9.85049519,  9.85049519, 10.20295423, ...,  8.08819997,
+          8.08819997,  8.08819997],
+        ...,
+        [ 9.49803615,  9.1455771 ,  9.49803615, ...,  7.73574093,
+          7.73574093,  7.73574093],
+        [ 9.49803615,  9.49803615,  9.1455771 , ...,  7.73574093,
+          8.08819997,  7.73574093],
+        [ 9.49803615,  9.1455771 ,  8.79311806, ...,  8.08819997,
+          7.73574093,  7.73574093]],
+
+       [[ 9.49803615,  9.85049519, 10.20295423, ...,  7.38328189,
+          7.38328189,  7.03082284],
+        [ 9.1455771 ,  9.85049519,  9.1455771 , ...,  7.73574093,
+          7.38328189,  7.38328189],
+        [ 9.85049519,  9.85049519,  9.49803615, ...,  8.08819997,
+          7.73574093,  8.08819997],
+        ...,
+        [ 9.49803615,  8.79311806,  9.1455771 , ...,  8.08819997,
+          7.38328189,  7.73574093],
+        [ 9.1455771 ,  9.1455771 ,  9.1455771 , ...,  7.73574093,
+          8.08819997,  7.73574093],
+        [ 8.79311806,  9.1455771 ,  9.1455771 , ...,  7.73574093,
+          7.73574093,  7.38328189]],
+
+       [[ 9.1455771 ,  8.79311806,  8.79311806, ...,  7.03082284,
+          7.03082284,  6.6783638 ],
+        [ 9.49803615,  9.85049519,  9.49803615, ...,  7.73574093,
+          7.73574093,  7.73574093],
+        [ 9.49803615,  9.49803615,  9.85049519, ...,  7.73574093,
+          8.08819997,  7.73574093],
+        ...,
+        [ 8.79311806,  9.1455771 ,  9.1455771 , ...,  8.08819997,
+          8.08819997,  8.08819997],
+        [ 9.1455771 ,  9.1455771 ,  9.1455771 , ...,  8.08819997,
+          8.08819997,  7.73574093],
+        [ 8.79311806,  9.1455771 ,  9.1455771 , ...,  8.08819997,
+          7.73574093,  7.73574093]]])
+~~~
+
+What type of data is this exactly? We can determine this by calling the `type()` function on `t1_data`.
+
+~~~
+type(t1_data)
+~~~
+{: .language-python}
+
+~~~
+numpy.ndarray
+~~~
+
+The data is a multidimensional **array** representing the image data. In Python, an array is used to store lists of numerical data into something like a table.
+
+> ## Check out attributes of the array
+> How can we see the number of dimensions in the `t1_data` array? What about the how big each dimension is (shape)? Once again, all of the attributes of the array can be seen by typing `t1_data.` followed by <kbdTab</kbd>.
+> ~~~
+> t1_data.ndim
+> ~~~
+> {: .language-python}
+>
+> > ## Solution
+> > ~~~
+> > 3
+> > ~~~
+> > {: .output}
+> `t1_data` contains 3 dimensions.Y ou can think of the data as a 3D version of a picture (more accurately, a volume).
+> ![](../fig/numpy_arrays.png)
+> {: .solution}
+{: .challenge}
+
+EXERCISE: Let's check out some attributes of the array. 
+
+t1_data contains 3 dimensions. 
 
 While typical 2D pictures are made out of squares called pixels, a 3D MR image is made up of 3D cubes called voxels.
 
