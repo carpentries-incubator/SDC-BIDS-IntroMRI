@@ -1,0 +1,7 @@
+awscli
+datalad
+matplotlib
+nibabel
+numpy
+pandas
+pybids
