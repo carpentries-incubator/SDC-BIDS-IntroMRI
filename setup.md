@@ -2,30 +2,72 @@
 title: Setup
 ---
 
-{% include links.md %}
-
 ## Overview
 
-This lesson is designed to be run on either a personal computer or in an interactive environment on [Binder][binder-repo].
-All of the software and data used in this lesson are freely available online, and instructions on how to obtain them are provided below.
+This lesson is designed to be run on either a personal computer or in a web-based interactive computational environment using [Binder][binder-info].
 
-## Install Python
+## Binder
+
+The Binder webpage for this lesson can be accessed at [the following link][binder-repo].
+Binder enables learners to run the collection of Python notebooks found in the `code` folder.
+All of the software and data used in the lesson are pre-installed in a custom computational environment and no additional software needs to be installed locally.
+
+> ## Binder Tips
+> If using Binder, please be aware that startup can take anywhere from 30 seconds to 10 minutes, depending on the learner's internet connection and how recent the custom environment was used.
+> Also, files can be uploaded to the Binder environment.
+> However, the state of the environment is not permanent.
+> If the learner is inactive for 10 minutes, the environment will shut down and all data will be lost.
+> Learners should save any changed files to their computers in order to preserve them.
+{: .callout}
+
+## Local
+
+### Install Python
 
 In this lesson, we will be using Python 3 with some of its most popular scientific and neuroimaging libraries.
 Although one can install a plain-vanilla Python and all required libraries by hand, we recommend installing [Anaconda][anaconda-website], a Python distribution that comes with everything we need for the lesson.
 Detailed installation instructions for various operating systems can be found on The Carpentries [template website for workshops][anaconda-instructions] and in the [Anaconda documentation][anaconda-install].
 
-## Install dcm2niix
+### Install Python Packages
 
-We will be using the dcm2niix software package for converting neuroimaging data from the DICOM format that is exported from the MRI scanner to the NIfTI format, which is much easier to work with. Detailed installation instructions for various operating systems can be found on the [dcm2niix README] [dcm2niix-install].
+Pip is the most common package installer for Python. This lesson requires a few additional neuroimaging-specific Python packages that can be installed with:
 
-## Install DataLad
+~~~
+pip install nibabel pybids
+~~~
+{: .language-bash}
 
-In order to obtain the lesson materials, we will be using DataLad, a tool for managing and version controlling large datasets. Detailed installation instructions for various operating systems can be found in the [Datalad Handbook] [datalad-install].
+### Install dcm2niix
 
-## Obtain lesson materials
+We will be using the `dcm2niix` software package for converting neuroimaging data from the DICOM format that is exported from the MRI scanner to the NIfTI format, which is much easier to work with.
+Detailed installation instructions for various operating systems can be found on the [dcm2niix README][dcm2niix-install].
+If using the Anaconda Python distribution described earlier, `dcm2niix` can be installed by running:
 
-`datalad install ///openneuro/ds000030`
+~~~
+conda install -c conda-forge dcm2niix
+~~~
+{: .language-bash}
+
+### Install DataLad
+
+In order to obtain some of the data that will be used in this lesson, we will be using DataLad, a tool for managing and version controlling large datasets.
+Detailed installation instructions for various operating systems can be found in the [Datalad Handbook] [datalad-install].
+Again, if using Anaconda, DataLad can be easily installed by running:
+
+~~~
+conda install -c conda-forge datalad
+~~~
+{: .language-bash}
+
+### Obtain lesson materials
+
+Once DataLad has been installed, create a new folder called `data` and download the [ds000030 dataset][ds000030] found on OpenNeuro.
+
+~~~
+mkdir data
+datalad install ///openneuro/ds000030
+~~~
+{: .language-bash}
 
 ## Launch Python interface
 
@@ -33,7 +75,7 @@ To start working with Python, we need to launch a program that will interpret an
 commands. Below we list several options. If you don't have a preference, proceed with the top
 option in the list that is available on your machine. Otherwise, you may use any interface you like.
 
-## Option A: Jupyter Notebook
+### Option A: Jupyter Notebook
 
 A Jupyter Notebook provides a browser-based interface for working with Python.
 If you installed Anaconda, you can launch a notebook in two ways:
@@ -76,7 +118,7 @@ If you installed Anaconda, you can launch a notebook in two ways:
 > > ~~~
 > > cd /D %userprofile%\Desktop\swc-python\data
 > > ~~~
-> > {: .source}
+> > {: .language-bash}
 > {: .solution}
 >
 > 2\. Start Jupyter server
@@ -92,7 +134,7 @@ If you installed Anaconda, you can launch a notebook in two ways:
 > > ~~~
 > > python -m notebook
 > > ~~~
-> > {: .source}
+> > {: .language-bash}
 > {: .solution}
 >
 > 3\. Launch the notebook by clicking on the "New" button on the right and selecting "Python 3"
@@ -113,7 +155,7 @@ To start using IPython, execute:
 ~~~
 ipython
 ~~~
-{: .source}
+{: .language-bash}
 
 &nbsp; <!-- vertical spacer -->
 
@@ -123,24 +165,22 @@ To launch a plain-vanilla Python interpreter, execute:
 ~~~
 python
 ~~~
-{: .source}
+{: .language-bash}
 
 If you are using [Git Bash on Windows][gitbash], you have to call Python _via_ `winpty`:
 ~~~
 winpty python
 ~~~
-{: .source}
-
-## Install Python Packages
-
-`pip install nibabel pybids`
+{: .language-bash}
 
 [anaconda-install]: https://docs.anaconda.com/anaconda/install
 [anaconda-instructions]: https://carpentries.github.io/workshop-template/#python
 [anaconda-website]: https://www.anaconda.com/
+[binder-info]: https://mybinder.readthedocs.io/en/latest/index.html
 [binder-repo]: https://mybinder.org/v2/gh/carpentries-incubator/SDC-BIDS-IntroMRI.git/gh-pages
 [datalad-install]: http://handbook.datalad.org/en/latest/intro/installation.html
 [dcm2niix-install]: https://github.com/rordenlab/dcm2niix#install
+[ds000030]: https://openneuro.org/datasets/ds000030/versions/1.0.0
 [gitbash]: https://gitforwindows.org
-[zipfile1]: {{ page.root }}/data/python-novice-inflammation-data.zip
-[zipfile2]: {{ page.root }}/code/python-novice-inflammation-code.zip
+
+{% include links.md %}
