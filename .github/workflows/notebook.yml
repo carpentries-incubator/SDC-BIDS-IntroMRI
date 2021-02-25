@@ -1,0 +1,53 @@
+name: Test notebooks
+
+on:
+  push
+
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
+
+    steps:
+    - name: Checkout GitHub repository
+      uses: actions/checkout@v2
+
+    # Run with multiple Python versions.
+    - name: Setup Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    # Use a cache for the pip install to avoid reinstalling every time this is run.
+    - name: Cache pip install
+      uses: actions/cache@v2
+      id: cache
+      with:
+        path: .cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    # Install all requirements to run these tests.
+    - name: Install requirements
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: |
+        python -m pip install --upgrade pip
+        pip3 install virtualenv
+        virtualenv ~/dc_venv
+        pip install -r requirements.txt
+        pip install pytest nbval
+
+    # Download the necessary data
+    - name: Download data
+      run: |
+        osf -p cmq8a clone ./data
+
+    # Run the actual tests of all the Python Notebooks.
+    - name: Test Notebooks
+      run: |
+        source ~/dc_venv/bin/activate
+        pytest --nbval-lax -v code/*/*.ipynb
