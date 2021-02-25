@@ -9,15 +9,15 @@ This lesson is designed to be run on either a personal computer or in a web-base
 ## Binder
 
 The Binder webpage for this lesson can be accessed at [the following link][binder-repo].
-Binder enables learners to run the collection of Python notebooks found in the `code` folder.
+Binder enables you to run the collection of Python notebooks found in the `code` folder.
 All of the software and data used in the lesson are pre-installed in a custom computational environment and no additional software needs to be installed locally.
 
 > ## Binder Tips
-> If using Binder, please be aware that startup can take anywhere from 30 seconds to 10 minutes, depending on the learner's internet connection and how recent the custom environment was used.
+> If using Binder, please be aware that startup can take anywhere from 30 seconds to 10 minutes, depending on your internet connection and how recent the custom environment was used.
 > Also, files can be uploaded to the Binder environment.
 > However, the state of the environment is not permanent.
-> If the learner is inactive for 10 minutes, the environment will shut down and all data will be lost.
-> Learners should save any changed files to their computers in order to preserve them.
+> If you are inactive for 10 minutes, the environment will shut down and all data will be lost.
+> You should save any changed files to their computers in order to preserve them.
 {: .callout}
 
 ## Local
@@ -61,10 +61,11 @@ conda install -c conda-forge datalad
 
 ### Obtain lesson materials
 
-Once DataLad has been installed, create a new folder called `data` and download the [ds000030 dataset][ds000030] found on OpenNeuro.
+Once DataLad has been installed, create a new folder on your Desktop and download the [ds000030 dataset][ds000030] found on OpenNeuro.
 
 ~~~
-mkdir data
+mkdir ~/Desktop/dc-mri/data
+cd ~/Desktop/dc-mri/data
 datalad install ///openneuro/ds000030
 ~~~
 {: .language-bash}
@@ -91,7 +92,7 @@ If you installed Anaconda, you can launch a notebook in two ways:
 > Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the
 > contents of your Home (or User) folder.
 > 3. Navigate to the `data` directory by clicking on the directory names leading to it:
-> `Desktop`, `swc-python`, then `data`:
+> `Desktop`, `dc-mri`, then `data`:
 > ![Anaconda Navigator Notebook directory](../fig/jupyter-notebook-data-directory.png)
 > 4. Launch the notebook by clicking on the "New" button and then selecting "Python 3":
 > ![Anaconda Navigator Notebook directory](../fig/jupyter-notebook-launch-notebook.png)
@@ -105,7 +106,7 @@ If you installed Anaconda, you can launch a notebook in two ways:
 > > If you're using a Unix shell application, such as Terminal app in macOS, Console or Terminal
 > > in Linux, or [Git Bash][gitbash] on Windows, execute the following command:
 > > ~~~
-> > cd ~/Desktop/swc-python/data
+> > cd ~/Desktop/dc-mri/data
 > > ~~~
 > > {: .language-bash}
 > {: .solution}
@@ -116,7 +117,7 @@ If you installed Anaconda, you can launch a notebook in two ways:
 > > <kbd>Return</kbd>. In the Command Prompt, use the following command to navigate to
 > > the `data` folder:
 > > ~~~
-> > cd /D %userprofile%\Desktop\swc-python\data
+> > cd /D %userprofile%\Desktop\dc-mri\data
 > > ~~~
 > > {: .language-bash}
 > {: .solution}
