@@ -87,10 +87,12 @@ If you installed Anaconda, you can launch a notebook in two ways:
 > It might ask you if you'd like to send anonymized usage information to Anaconda developers:
 > ![Anaconda Navigator first launch](../fig/anaconda-navigator-first-launch.png)
 > Make your choice and click "Ok, and don't show again" button.
+> 
 > 2. Find the "Notebook" tab and click on the "Launch" button:
 > ![Anaconda Navigator Notebook launch](../fig/anaconda-navigator-notebook-launch.png)
 > Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the
 > contents of your Home (or User) folder.
+> 
 > 3. Navigate to the `data` directory by clicking on the directory names leading to it:
 > `Desktop`, `dc-mri`, then `data`:
 > ![Anaconda Navigator Notebook directory](../fig/jupyter-notebook-data-directory.png)
@@ -145,7 +147,7 @@ If you installed Anaconda, you can launch a notebook in two ways:
 
 &nbsp; <!-- vertical spacer -->
 
-## Option B: IPython interpreter
+### Option B: IPython interpreter
 
 IPython is an alternative solution situated somewhere in between the plain-vanilla Python
 interpreter and Jupyter Notebook. It provides an interactive command-line based interpreter with
@@ -160,7 +162,7 @@ ipython
 
 &nbsp; <!-- vertical spacer -->
 
-## Option C: plain-vanilla Python interpreter
+### Option C: plain-vanilla Python interpreter
 
 To launch a plain-vanilla Python interpreter, execute:
 ~~~
