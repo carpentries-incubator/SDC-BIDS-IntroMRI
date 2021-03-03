@@ -85,19 +85,19 @@ If you installed Anaconda, you can launch a notebook in two ways:
 >
 > 1. Launch Anaconda Navigator.
 > It might ask you if you'd like to send anonymized usage information to Anaconda developers:
-> ![Anaconda Navigator first launch](../fig/anaconda-navigator-first-launch.png)
+> ![Anaconda Navigator first launch](fig/anaconda-navigator-first-launch.png)
 > Make your choice and click "Ok, and don't show again" button.
 > 
 > 2. Find the "Notebook" tab and click on the "Launch" button:
-> ![Anaconda Navigator Notebook launch](../fig/anaconda-navigator-notebook-launch.png)
+> ![Anaconda Navigator Notebook launch](fig/anaconda-navigator-notebook-launch.png)
 > Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the
 > contents of your Home (or User) folder.
 > 
 > 3. Navigate to the `data` directory by clicking on the directory names leading to it:
 > `Desktop`, `dc-mri`, then `data`:
-> ![Anaconda Navigator Notebook directory](../fig/jupyter-notebook-data-directory.png)
+> ![Anaconda Navigator Notebook directory](fig/jupyter-notebook-data-directory.png)
 > 4. Launch the notebook by clicking on the "New" button and then selecting "Python 3":
-> ![Anaconda Navigator Notebook directory](../fig/jupyter-notebook-launch-notebook.png)
+> ![Anaconda Navigator Notebook directory](fig/jupyter-notebook-launch-notebook.png)
 {: .solution}
 
 > ## Command line (Terminal)
@@ -142,7 +142,7 @@ If you installed Anaconda, you can launch a notebook in two ways:
 >
 > 3\. Launch the notebook by clicking on the "New" button on the right and selecting "Python 3"
 > from the drop-down menu:
-> ![Anaconda Navigator Notebook directory](../fig/jupyter-notebook-launch-notebook2.png)
+> ![Anaconda Navigator Notebook directory](fig/jupyter-notebook-launch-notebook2.png)
 {: .solution}
 
 &nbsp; <!-- vertical spacer -->
