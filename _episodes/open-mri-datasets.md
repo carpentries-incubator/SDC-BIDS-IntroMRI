@@ -12,6 +12,8 @@ keypoints:
 - "PyBIDS is a Python-based tool that allows for easy exploration of BIDS-formatted neuroimaging data"
 ---
 
+{% include base_path.html %}
+
 ## Tutorial Dataset
 
 In this episode, we will be using a subset of a publicly available dataset, **ds000030**, from [openneuro.org](https://openneuro.org/datasets/ds000030). The dataset is structured according to the Brain Imaging Data Structure (BIDS). BIDS is a simple and intuitive way to organize and describe your neuroimaging and behavioural data. Neuroimaging experiments result in complicated data that can be arranged in several different ways. BIDS tackles this problem by suggesting a new standard (based on consensus from multiple researchers across the world) for the arrangement of neuroimaging datasets.

@@ -68,6 +68,11 @@ collections:
     output: true
     permalink: /:path/index.html
 
+# Manual episode order
+episode_order:
+  - anatomy-of-nifti
+  - open-mri-datasets
+
 # Set the default layout for things in the episodes collection.
 defaults:
   - values:
