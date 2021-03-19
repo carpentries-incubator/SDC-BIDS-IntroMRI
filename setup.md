@@ -87,12 +87,12 @@ If you installed Anaconda, you can launch a notebook in two ways:
 > It might ask you if you'd like to send anonymized usage information to Anaconda developers:
 > ![Anaconda Navigator first launch](../fig/anaconda-navigator-first-launch.png)
 > Make your choice and click "Ok, and don't show again" button.
-> 
+>
 > 2. Find the "Notebook" tab and click on the "Launch" button:
 > ![Anaconda Navigator Notebook launch](../fig/anaconda-navigator-notebook-launch.png)
 > Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the
 > contents of your Home (or User) folder.
-> 
+>
 > 3. Navigate to the `data` directory by clicking on the directory names leading to it:
 > `Desktop`, `dc-mri`, then `data`:
 > ![Anaconda Navigator Notebook directory](../fig/jupyter-notebook-data-directory.png)
