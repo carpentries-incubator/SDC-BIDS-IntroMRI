@@ -12,7 +12,7 @@ The lesson will introduce different types of MRI modalities and how they can be 
 Over the past decade, the neuroimaging field has produced (and continues to produce) incredible amounts of data about the brain. As a result, the scientific community has developed a diverse set of tools to facilitate the access, analysis and visualization of this data. This lesson will start you on a path towards using these tools effectively in your own work.
 
 > ## Prerequisites
-> 
+>
 > This lesson assumes that you have some working knowledge of the Unix shell and Python.
 > These requirements can be fulfilled by:
 > - completing the Software Carpentry [Unix][swc-shell] and/or [Python][swc-python] lessons
