@@ -6,7 +6,7 @@ export SHELL = /bin/bash
 
 # Settings
 MAKEFILES=Makefile $(wildcard *.mk)
-JEKYLL=bundle config --local set path .vendor/bundle && bundle install && bundle update && bundle exec jekyll
+JEKYLL=bundle config set --local path .vendor/bundle && bundle install && bundle update && bundle exec jekyll
 PARSER=bin/markdown_ast.rb
 DST=_site
 
@@ -15,7 +15,7 @@ DST=_site
 PYTHON3_EXE := $(shell which python3 2>/dev/null)
 ifneq (, $(PYTHON3_EXE))
   ifeq (,$(findstring Microsoft/WindowsApps/python3,$(subst \,/,$(PYTHON3_EXE))))
-    PYTHON := python3
+    PYTHON := $(PYTHON3_EXE)
   endif
 endif
 
@@ -24,24 +24,24 @@ ifeq (,$(PYTHON))
   ifneq (, $(PYTHON_EXE))
     PYTHON_VERSION_FULL := $(wordlist 2,4,$(subst ., ,$(shell python --version 2>&1)))
     PYTHON_VERSION_MAJOR := $(word 1,${PYTHON_VERSION_FULL})
-    ifneq (3, ${PYTHON_VERSION_MAJOR})
-      $(error "Your system does not appear to have Python 3 installed.")
+    ifeq (3, ${PYTHON_VERSION_MAJOR})
+      PYTHON := $(PYTHON_EXE)
+    else
+      PYTHON_NOTE = "Your system does not appear to have Python 3 installed."
     endif
-    PYTHON := python
   else
-      $(error "Your system does not appear to have any Python installed.")
+      PYTHON_NOTE = "Your system does not appear to have any Python installed."
   endif
 endif
 
-
-# Controls
-.PHONY : commands clean files
 
 # Default target
 .DEFAULT_GOAL := commands
 
 ## I. Commands for both workshop and lesson websites
 ## =================================================
+
+.PHONY: site docker-serve repo-check clean clean-rmd
 
 ## * serve            : render website and run a local server
 serve : lesson-md
@@ -53,8 +53,8 @@ site : lesson-md
 
 ## * docker-serve     : use Docker to serve the site
 docker-serve :
-	docker pull carpentries/lesson-docker:latest
-	docker run --rm -it \
+	@docker pull carpentries/lesson-docker:latest
+	@docker run --rm -it \
 		-v $${PWD}:/home/rstudio \
 		-p 4000:4000 \
 		-p 8787:8787 \
@@ -63,7 +63,7 @@ docker-serve :
 		carpentries/lesson-docker:latest
 
 ## * repo-check       : check repository settings
-repo-check :
+repo-check : python
 	@${PYTHON} bin/repo_check.py -s .
 
 ## * clean            : clean up junk files
@@ -71,6 +71,9 @@ clean :
 	@rm -rf ${DST}
 	@rm -rf .sass-cache
 	@rm -rf bin/__pycache__
+	@rm -rf .vendor
+	@rm -rf .bundle
+	@rm -f Gemfile.lock
 	@find . -name .DS_Store -exec rm {} \;
 	@find . -name '*~' -exec rm {} \;
 	@find . -name '*.pyc' -exec rm {} \;
@@ -88,7 +91,7 @@ clean-rmd :
 .PHONY : workshop-check
 
 ## * workshop-check   : check workshop homepage
-workshop-check :
+workshop-check : python
 	@${PYTHON} bin/workshop_check.py .
 
 
@@ -125,19 +128,20 @@ HTML_DST = \
 ## * lesson-md        : convert Rmarkdown files to markdown
 lesson-md : ${RMD_DST}
 
-_episodes/%.md: _episodes_rmd/%.Rmd
-	@bin/knit_lessons.sh $< $@
+_episodes/%.md: _episodes_rmd/%.Rmd install-rmd-deps
+	@mkdir -p _episodes
+	@$(SHELL) bin/knit_lessons.sh $< $@
 
-# * lesson-check     : validate lesson Markdown
-lesson-check : lesson-fixme
+## * lesson-check     : validate lesson Markdown
+lesson-check : python lesson-fixme
 	@${PYTHON} bin/lesson_check.py -s . -p ${PARSER} -r _includes/links.md
 
 ## * lesson-check-all : validate lesson Markdown, checking line lengths and trailing whitespace
-lesson-check-all :
+lesson-check-all : python
 	@${PYTHON} bin/lesson_check.py -s . -p ${PARSER} -r _includes/links.md -l -w --permissive
 
 ## * unittest         : run unit tests on checking tools
-unittest :
+unittest : python
 	@${PYTHON} bin/test_lesson_check.py
 
 ## * lesson-files     : show expected names of generated files for debugging
@@ -155,6 +159,15 @@ lesson-fixme :
 ## IV. Auxililary (plumbing) commands
 ## =================================================
 
+.PHONY : commands python
+
 ## * commands         : show all commands.
 commands :
 	@sed -n -e '/^##/s|^##[[:space:]]*||p' $(MAKEFILE_LIST)
+
+python :
+ifeq (, $(PYTHON))
+	$(error $(PYTHON_NOTE))
+else
+	@:
+endif
