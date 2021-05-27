@@ -7,6 +7,7 @@ channels:
 dependencies:
   - python=3.8.*
   - pip
+  - dcm2niix=1.0.20210317
   - git
   - git-annex
   - datalad=0.14.4
@@ -14,7 +15,6 @@ dependencies:
   - nibabel
   - numpy
   - pandas
-  - texinfo
 
   - pip:
       - pybids
