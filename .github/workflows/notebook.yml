@@ -1,10 +1,11 @@
 name: Test notebooks
 
 on:
-  push
+  push:
+    paths: "*.ipynb"
 
 jobs:
-  build:
+  test-notebooks:
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
     strategy:
@@ -26,28 +27,25 @@ jobs:
       uses: actions/cache@v2
       id: cache
       with:
-        path: .cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        path: ${{ env.pythonLocation }}
+        key: ${{ env.pythonLocation }}-${{ hashFiles('requirements.txt') }}
         restore-keys: |
-          ${{ runner.os }}-pip-
+          ${{ env.pythonLocation }}-
 
     # Install all requirements to run these tests.
     - name: Install requirements
       if: steps.cache.outputs.cache-hit != 'true'
       run: |
         python -m pip install --upgrade pip
-        pip3 install virtualenv
-        virtualenv ~/dc_venv
         pip install -r requirements.txt
         pip install pytest nbval
 
     # Download the necessary data
     - name: Download data
       run: |
-        osf -p cmq8a clone ./data
+        datalad install
 
     # Run the actual tests of all the Python Notebooks.
     - name: Test Notebooks
       run: |
-        source ~/dc_venv/bin/activate
-        pytest --nbval-lax -v code/*/*.ipynb
+        pytest --nbval-lax -v code/*_solutions.ipynb

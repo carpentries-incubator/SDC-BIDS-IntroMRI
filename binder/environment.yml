@@ -1,0 +1,21 @@
+name: dataviz_python
+
+channels:
+  - default
+  - conda-forge
+
+dependencies:
+  - python=3.8.*
+  - pip
+  - git
+  - git-annex
+  - datalad=0.14.4
+  - matplotlib
+  - nibabel
+  - numpy
+  - pandas
+  - texinfo
+
+  - pip:
+      - pybids
+      - datalad-installer

@@ -10,7 +10,7 @@
 carpentry: "incubator"
 
 # Overall title for pages.
-title: "Introduction to MRI Data Analysis"
+title: "Introduction to Working with MRI Data in Python"
 
 # Life cycle stage of the lesson
 # possible values: "pre-alpha", "alpha", "beta", "stable"
@@ -70,7 +70,9 @@ collections:
 
 # Manual episode order
 episode_order:
+  - introduction
   - anatomy-of-nifti
+  - data-organization
   - open-mri-datasets
 
 # Set the default layout for things in the episodes collection.

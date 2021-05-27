@@ -1,0 +1,11 @@
+# Git set up
+git config --global --add user.name "Ford Escort"
+git config --global --add user.email 42@H2G2.com
+
+# Get data
+
+openneuro_dataset=ds000030
+
+datalad clone "https://github.com/OpenNeuroDatasets/${openneuro_dataset}.git" "data/${openneuro_dataset}/"
+datalad get data/${openneuro_dataset}/sub-01/anat/*
+datalad get data/${openneuro_dataset}/sub-01/func/sub-01_task-compL1_run-1_bold.*
