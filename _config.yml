@@ -70,7 +70,8 @@ collections:
 
 # Manual episode order
 episode_order:
-  - introduction
+  - before-we-start
+  - scanner-to-computer
   - anatomy-of-nifti
   - data-organization
   - open-mri-datasets
@@ -101,6 +102,10 @@ exclude:
   - .vendor/
   - vendor/
   - .docker-vendor/
+  - binder/
+  - code/
+  - data/
+  - files/
 
 # Turn on built-in syntax highlighting.
 highlighter: rouge

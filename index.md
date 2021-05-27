@@ -4,12 +4,15 @@ root: .  # Is the only page that doesn't follow the pattern /:path/index.html
 permalink: index.html  # Is the only page that doesn't follow the pattern /:path/index.html
 ---
 
-The goal of this lesson is to provide an introduction to the core concepts involved in analyzing magnetic resonance imaging (MRI) data.
-It is intended for learners with no prior experience working with MRI data.
+The goal of this lesson is to provide an introduction to the core concepts involved in working with magnetic resonance imaging (MRI) data.
+It is intended for learners with no prior experience.
 
-The lesson will introduce different types of MRI modalities and how they can be easily organized and shared. This lesson is also a pre-requisite for the [Structural][inc-smri], [Functional][inc-fmri] and [Diffusion][inc-dmri] MRI Data Analysis lessons, which go more in-depth into some specific MRI modalities.
+The lesson will introduce different types of MRI modalities and how they can be easily organized and shared.
+This lesson is also a pre-requisite for the [Structural][inc-smri], [Functional][inc-fmri] and [Diffusion][inc-dmri] MRI Data Analysis lessons, which go more in-depth into their respective MRI modalities.
 
-Over the past decade, the neuroimaging field has produced (and continues to produce) incredible amounts of data about the brain. As a result, the scientific community has developed a diverse set of tools to facilitate the access, analysis and visualization of this data. This lesson will start you on a path towards using these tools effectively in your own work.
+Over the past decade, the neuroimaging field has produced (and continues to produce) incredible amounts of data.
+As a result, the scientific community has developed a diverse set of tools to facilitate the access, analysis and visualization of this data.
+This lesson will start you on a path towards using these tools effectively in your own work.
 
 > ## Prerequisites
 >

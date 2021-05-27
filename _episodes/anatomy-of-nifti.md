@@ -16,9 +16,8 @@ keypoints:
 
 {% include base_path.html %}
 
-In the last lesson, we introduced the NIfTI. NIfTI is one of the most ubiquitous file formats for storing neuroimaging data.
+In the last lesson, we introduced the NIfTI.
 We'll cover a few details to get started working with them.
-If you're interested in learning more about NIfTI images, we highly recommend [this blog post](https://brainder.org/2012/09/23/the-nifti-file-format/) about the NIfTI format.
 
 ## Reading NIfTI Images
 
