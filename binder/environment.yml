@@ -1,4 +1,4 @@
-name: dataviz_python
+name: dc-mri
 
 channels:
   - default
