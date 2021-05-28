@@ -8,7 +8,10 @@ This lesson is designed to be run on either a personal computer or in a web-base
 
 ## Binder
 
-The Binder webpage for this lesson can be accessed at [the following link][binder-repo].
+The Binder webpage for this lesson can be accessed by clicking the button below.
+
+[![Binder][binder-svg]][binder-repo]
+
 Binder enables you to run the collection of Python notebooks found in the `code` folder.
 All of the software and data used in the lesson are pre-installed in a custom computational environment and no additional software needs to be installed locally.
 
@@ -180,7 +183,8 @@ winpty python
 [anaconda-instructions]: https://carpentries.github.io/workshop-template/#python
 [anaconda-website]: https://www.anaconda.com/
 [binder-info]: https://mybinder.readthedocs.io/en/latest/index.html
-[binder-repo]: https://mybinder.org/v2/gh/carpentries-incubator/SDC-BIDS-IntroMRI.git/gh-pages
+[binder-svg]: https://mybinder.org/badge_logo.svg
+[binder-repo]: https://mybinder.org/v2/gh/carpentries-incubator/SDC-BIDS-IntroMRI/gh-pages?filepath=code%2F
 [datalad-install]: http://handbook.datalad.org/en/latest/intro/installation.html
 [dcm2niix-install]: https://github.com/rordenlab/dcm2niix#install
 [ds000030]: https://openneuro.org/datasets/ds000030/versions/1.0.0
