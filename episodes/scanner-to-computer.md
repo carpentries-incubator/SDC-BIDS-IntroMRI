@@ -3,9 +3,11 @@ title: "From the scanner to our computer"
 teaching: 20
 exercises: 10
 questions:
-- ""
+- "What are the main MRI modalities?"
+- "What's the first step necessary to start working with MRI data?"
 objectives:
-- ""
+- "Understand how different MRI modalities differ and what each one represents"
+- "Become familiar with converting MRI data from DICOM to NIfTI"
 keypoints:
 - ""
 ---
@@ -14,16 +16,16 @@ keypoints:
 
 ## Types of MR scans
 
-**Anatomical**
+### Anatomical
 
-![](../fig/t1t2flairbrain.jpeg)
+![](../fig/t1t2flairbrain.jpg)
 
 *Sourced from https://case.edu/med/neurology/NR/MRI%20Basics.htm*
 
 - 3D image of anatomy (i.e., shape, volume, cortical thickness, brain region)
 - can differentiate tissue types
 
-**Functional**
+### Functional
 
 ![](../fig/bold.gif)
 
@@ -34,7 +36,7 @@ keypoints:
 - tracks the blood oxygen level-dependant (BOLD) signal as an analogue of brain activity
 - 4D image (x, y, z + time)
 
-**Diffusion**
+### Diffusion
 
 ![](../fig/dwi.gif)
 
@@ -88,7 +90,7 @@ dcm2niix -help
 > > ## Solution
 > > ~~~
 > > mkdir -p ../data/dicom_examples/nii
-> > dcm2niix -z y -o ../data/dicom_examples ../data/dicom_examples/0219191_mystudy-0219-1114/dcm
+> > dcm2niix -z y -o ../data/dicom_examples/nii ../data/dicom_examples/0219191_mystudy-0219-1114/dcm
 > > ~~~
 > > {: .language-bash}
 > {: .solution}

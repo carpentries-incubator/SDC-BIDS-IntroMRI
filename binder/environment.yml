@@ -18,5 +18,6 @@ dependencies:
   - pandas
 
   - pip:
-      - pybids
       - datalad-installer
+      - dcm2bids
+      - pybids

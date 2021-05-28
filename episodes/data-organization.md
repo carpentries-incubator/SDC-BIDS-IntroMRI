@@ -12,7 +12,7 @@ keypoints:
 
 {% include base_path.html %}
 
- BIDS is a simple and intuitive way to organize and describe your neuroimaging and behavioural data. Neuroimaging experiments result in complicated data that can be arranged in several different ways. BIDS tackles this problem by suggesting a new standard (based on consensus from multiple researchers across the world) for the arrangement of neuroimaging datasets.
+BIDS is a simple and intuitive way to organize and describe your neuroimaging and behavioural data. Neuroimaging experiments result in complicated data that can be arranged in several different ways. BIDS tackles this problem by suggesting a new standard (based on consensus from multiple researchers across the world) for the arrangement of neuroimaging datasets.
 
 Using the same structure for all of your studies will allow you to easily reuse all of your scripts between studies. Additionally, sharing code with other researchers will be much easier.
 
