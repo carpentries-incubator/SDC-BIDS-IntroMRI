@@ -36,7 +36,7 @@ Detailed installation instructions for various operating systems can be found on
 Pip is the most common package installer for Python. This lesson requires a few additional neuroimaging-specific Python packages that can be installed with:
 
 ~~~
-pip install nibabel pybids
+pip install nibabel nilearn pybids
 ~~~
 {: .language-bash}
 
@@ -69,7 +69,7 @@ Once DataLad has been installed, create a new folder on your Desktop and downloa
 ~~~
 mkdir ~/Desktop/dc-mri/data
 cd ~/Desktop/dc-mri/data
-datalad install ///openneuro/ds000030
+datalad clone https://github.com/OpenNeuroDatasets/ds000030.git
 ~~~
 {: .language-bash}
 
