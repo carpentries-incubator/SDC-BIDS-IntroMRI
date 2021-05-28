@@ -16,9 +16,7 @@ keypoints:
 
 ## Tutorial Dataset
 
-In this episode, we will be using a subset of a publicly available dataset, **ds000030**, from [openneuro.org](https://openneuro.org/datasets/ds000030). The dataset is structured according to the Brain Imaging Data Structure (BIDS). BIDS is a simple and intuitive way to organize and describe your neuroimaging and behavioural data. Neuroimaging experiments result in complicated data that can be arranged in several different ways. BIDS tackles this problem by suggesting a new standard (based on consensus from multiple researchers across the world) for the arrangement of neuroimaging datasets.
-
-Using the same structure for all of your studies will allow you to easily reuse all of your scripts between studies. Additionally, sharing code with other researchers will be much easier.
+In this episode, we will be using a subset of a publicly available dataset, **ds000030**, from [openneuro.org](https://openneuro.org/datasets/ds000030). All of the datasets on OpenNeuro are already structured according to BIDS.
 
 ## Downloading Data
 
@@ -81,6 +79,12 @@ From this we have a list of participants corresponding to a list of participants
 We can then use this list in order to download participant from software such as `aws` or `datalad`.
 In fact, this is exactly how we set up a list of participants to download for the fMRI workshop!
 Since we've already downloaded the dataset, we can now explore the structure using PyBIDS, a Python API for querying, summarizing and manipulating the BIDS folder structure.
+
+Getting and dropping data 
+
+datalad get
+datalad drop
+
 
 ~~~
 from bids.layout import BIDSLayout

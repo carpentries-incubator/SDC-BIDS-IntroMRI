@@ -12,6 +12,7 @@ objectives:
 - "View and manipulate image data"
 keypoints:
 - ""
+math: true
 ---
 
 {% include base_path.html %}
@@ -33,7 +34,7 @@ First, use the `load()` function to create a NiBabel image object from a NIfTI f
 We'll load in an example T1w image from the zip file we just downloaded.
 
 ~~~
-t1_img = nib.load("../../../data/someones_anatomy.nii.gz")
+t1_img = nib.load("../data/dicom_examples/0219191_mystudy-0219-1114/0219191_mystudy-0219-1114_anat_ses-01_T1w_20190219111436_5.nii.gz")
 ~~~
 {: .language-python}
 
@@ -505,7 +506,7 @@ Applying the affine matrix (`t1_affine`) is done through using a *linear map* (m
 The concept of an affine matrix may seem confusing at first but an example might help gain an intuition:
 
 Suppose we have two voxels located at the the following coordinates:
-$(64,100,2)$
+$(64, 100, 2)$
 
 And we wanted to know what the distances between these two voxels are in terms of real world distances (millimetres).
 This information cannot be derived from using voxel coordinates so we turn to the **affine matrix**.
@@ -517,14 +518,13 @@ That means once we apply the matrix our coordinates are as follows:
 So increasing a coordinate value in the first dimension corresponds to moving to the right of the person being scanned.
 
 Applying our affine matrix yields the following coordinates:
-
-`(10.25,30.5,9.2)`
+$(10.25, 30.5, 9.2)$
 
 This means that:
 
-* Voxel 1 is `90.23-10.25= 79.98` in the R axis. Positive values mean move right
-* Voxel 1 is `0.2-30.5= -30.3` in the A axis. Negative values mean move posterior
-* Voxel 1 is `2.15-9.2= -7.05` in the S axis. Negative values mean move inferior
+* Voxel 1 is `90.23 - 10.25 = 79.98` in the R axis. Positive values mean move right
+* Voxel 1 is `0.2 - 30.5 = -30.3` in the A axis. Negative values mean move posterior
+* Voxel 1 is `2.15 - 9.2 = -7.05` in the S axis. Negative values mean move inferior
 
 This covers the basics of how NIfTI data and metadata are stored and organized in the context of Python.
 In the next segment we'll talk a bit about an increasingly important component of MR data analysis - data organization.
