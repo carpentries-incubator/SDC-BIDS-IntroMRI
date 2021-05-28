@@ -20,7 +20,7 @@ math: true
 In the last lesson, we introduced the NIfTI.
 We'll cover a few details to get started working with them.
 
-## Reading NIfTI Images
+## Reading NIfTI images
 
 [NiBabel](https://nipy.org/nibabel/) is a Python package for reading and writing neuroimaging data.
 To learn more about how NiBabel handles NIfTIs, check out the [Working with NIfTI images](https://nipy.org/nibabel/nifti_images.html) page of the NiBabel documentation, from which this episode is heavily based.
@@ -34,7 +34,7 @@ First, use the `load()` function to create a NiBabel image object from a NIfTI f
 We'll load in an example T1w image from the zip file we just downloaded.
 
 ~~~
-t1_img = nib.load("../data/dicom_examples/0219191_mystudy-0219-1114/0219191_mystudy-0219-1114_anat_ses-01_T1w_20190219111436_5.nii.gz")
+t1_img = nib.load("../data/dicom_examples/nii/0219191_mystudy-0219-1114_anat_ses-01_T1w_20190219111436_5.nii.gz")
 ~~~
 {: .language-python}
 
@@ -173,12 +173,13 @@ t1_hdr['<key_name>']
 
 > ## Extract values from the NIfTI header
 > Extract the value of pixdim from `t1_hdr`
-> ~~~
-> t1_hdr['pixdim']
-> ~~~
-> {: .language-python}
 >
 > > ## Solution
+> > ~~~
+> > t1_hdr['pixdim']
+> > ~~~
+> > {: .language-python}
+> >
 > > ~~~
 > > array([1.  , 2.75, 2.75, 2.75, 1.  , 1.  , 1.  , 1.  ], dtype=float32)
 > > ~~~
@@ -304,29 +305,31 @@ In Python, an array is used to store lists of numerical data into something like
 
 > ## Check out attributes of the array
 > How can we see the number of dimensions in the `t1_data` array? Once again, all of the attributes of the array can be seen by typing `t1_data.` followed by <kbd>Tab</kbd>.
-> ~~~
-> t1_data.ndim
-> ~~~
-> {: .language-python}
 >
 > > ## Solution
+> > ~~~
+> > t1_data.ndim
+> > ~~~
+> > {: .language-python}
+> >
 > > ~~~
 > > 3
 > > ~~~
 > > {: .output}
-> `t1_data` contains 3 dimensions.Y ou can think of the data as a 3D version of a picture (more accurately, a volume).
+> `t1_data` contains 3 dimensions. You can think of the data as a 3D version of a picture (more accurately, a volume).
 > ![](../fig/numpy_arrays.png)
 > {: .solution}
 >   
 > While typical 2D pictures are made out of squares called **pixels**, a 3D MR image is made up of 3D cubes called **voxels**.
 > ![](../fig/mri_slices.jpg)  
 > What about the how big each dimension is (shape)?
-> ~~~
-> t1_data.shape
-> ~~~
-> {: .language-python}
 > 
 > > ## Solution
+> > ~~~
+> > t1_data.shape
+> > ~~~
+> > {: .language-python}
+> >
 > > ~~~
 > > (57, 67, 56)
 > > ~~~
@@ -397,7 +400,7 @@ The second item is item 1, the third is item 2, etc.
 This yields a single value representing the intensity of the signal at a particular voxel! 
 Next we'll see how to not just pull one voxel but a slice or an array of voxels for visualization and analysis!
 
-## Working with Image Data
+## Working with image data
 
 Slicing does exactly what it seems to imply.
 Giving our 3D volume, we pull out a 2D slice of our data.
@@ -417,7 +420,7 @@ x_slice = t1_data[9, :, :]
 This is similar to the indexing we did before to pull out a single voxel.
 However, instead of providing a value for each axis, the `:` indicates that we want to grab *all* values from that particular axis.
 
-> ## Slicing MRI Data
+> ## Slicing MRI data
 > Now try selecting the 20th slice from the y axis.
 >
 > > ## Solution
@@ -439,7 +442,7 @@ However, instead of providing a value for each axis, the `:` indicates that we w
 
 We've been slicing and dicing brain images but we have no idea what they look like! In the next section we'll show you how you can visualize brain slices!
 
-## Visualizing
+## Visualizing the data
 
 We previously inspected the signal intensity of the voxel at coordinates (10,20,3).
 Let's see what out data looks like when we slice it at this location.
