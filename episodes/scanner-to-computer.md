@@ -25,9 +25,7 @@ keypoints:
 
 **Functional**
 
-![](../fig/fmri.png)
-
-*Sourced from Kashou, 2014*
+![](../fig/bold.gif)
 
 ![](../fig/fmri_timeseries.png)
 
@@ -58,8 +56,6 @@ keypoints:
 | MINC | .mnc | Montreal Neurological Institute |
 | NRRD | .nrrd | |
 
-![dicom-to-nifti](../fig/dicom_to_nifti.png)
-
 From the MRI scanner, images are initially collected in the DICOM format and can be converted to these other formats to make working with the data easier.
 
 Let's download some example DICOM data to see what it looks like.
@@ -73,6 +69,8 @@ gzip -d ../data/dicom_examples/0219191_mystudy-0219-1114/dcm/*dcm.gz
 rm ../data/0219191_mystudy-0219-1114.tar.gz
 ~~~
 {: .language-bash}
+
+![dicom-to-nifti](../fig/dicom_to_nifti.png)
 
 NIfTI is one of the most ubiquitous file formats for storing neuroimaging data.
 If you're interested in learning more about NIfTI images, we highly recommend [this blog post about the NIfTI format](http://brainder.org/2012/09/23/the-nifti-file-format/).
