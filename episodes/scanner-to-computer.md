@@ -1,5 +1,5 @@
 ---
-title: "From the Scanner to Our Computer"
+title: "From the scanner to our computer"
 teaching: 20
 exercises: 10
 questions:
@@ -12,40 +12,86 @@ keypoints:
 
 {% include base_path.html %}
 
-## Types of MR Scans
+## Types of MR scans
 
-![mr-scan-types](../fig/mr_scan_types.png)
+**Anatomical**
 
-Anatomical
-3-dimensional image of anatomy
-3D "pixel" is a "voxel"
-T1w is the most common
-White matter is white, Gray matter is gray, cerebral spinal fluid is black
+![](../fig/t1t2flairbrain.jpeg)
 
-Functional MRI
-track the blood oxygen level dependant (BOLD) signal
-4-dimensional (x, y, z + time)
+*Sourced from https://case.edu/med/neurology/NR/MRI%20Basics.htm*
 
-Diffusion MRI
-measures diffusion of water in order to model tissue microstructure
-4-dimensional (x, y, z + direction of diffusion)
-need parameters about the strength of the diffusion "gradient" and its direction (.bval and .bvec)
+- 3D image of anatomy (i.e., shape, volume, cortical thickness, brain region)
+- can differentiate tissue types
 
-## Neuroimaging File Formats
+**Functional**
+
+![](../fig/fmri.png)
+
+*Sourced from Kashou, 2014*
+
+![](../fig/fmri_timeseries.png)
+
+*Sourced from Wagner and Lindquist, 2015*
+
+- tracks the blood oxygen level-dependant (BOLD) signal as an analogue of brain activity
+- 4D image (x, y, z + time)
+
+**Diffusion**
+
+![](../fig/dwi.gif)
+
+![](../fig/dwi_tracts.png)
+
+*Sourced from http://brainsuite.org/processing/diffusion/tractography/*
+
+- measures diffusion of water in order to model tissue microstructure
+- 4D image (x, y, z + direction of diffusion)
+- need parameters about the strength of the diffusion "gradient" and its direction (`.bval` and `.bvec`)
+
+## Neuroimaging file formats
 
 |Format Name | File Extension | Origin |
 |---|---|---|
-| Analyze | .img/.hdr | Analyze Software, Mayo Clinic |
 | DICOM | none | ACR/NEMA Consortium |
+| Analyze | .img/.hdr | Analyze Software, Mayo Clinic |
 | NIfTI | .nii | Neuroimaging Informatics Technology Initiative |
 | MINC | .mnc | Montreal Neurological Institute |
 | NRRD | .nrrd | |
 
 ![dicom-to-nifti](../fig/dicom_to_nifti.png)
 
-From the MRI scanner, images are initially collected in the DICOM format and can be converted to NIfTI using [dcm2niix](https://github.com/rordenlab/dcm2niix).
+From the MRI scanner, images are initially collected in the DICOM format and can be converted to these other formats to make working with the data easier.
 
-Do a conversion to nii.gz
+Let's download some example DICOM data to see what it looks like.
+This data was generously shared publicly by the [Princeton Handbook for Reproducible Neuroimaging](https://brainhack-princeton.github.io/handbook/).
 
-NIfTI is one of the most ubiquitous file formats for storing neuroimaging data. We'll cover a few details to get started working with them. If you're interested in learning more about NIfTI images, we highly recommend [this blog post about the NIfTI format](http://brainder.org/2012/09/23/the-nifti-file-format/).
+~~~
+wget https://zenodo.org/record/3677090/files/0219191_mystudy-0219-1114.tar.gz -O ../data/0219191_mystudy-0219-1114.tar.gz
+mkdir -p ../data/dicom_examples
+tar -xvzf ../data/0219191_mystudy-0219-1114.tar.gz -C ../data/dicom_examples
+gzip -d ../data/dicom_examples/0219191_mystudy-0219-1114/dcm/*dcm.gz
+rm ../data/0219191_mystudy-0219-1114.tar.gz
+~~~
+{: .language-bash}
 
+NIfTI is one of the most ubiquitous file formats for storing neuroimaging data.
+If you're interested in learning more about NIfTI images, we highly recommend [this blog post about the NIfTI format](http://brainder.org/2012/09/23/the-nifti-file-format/).
+We can convert our DICOM data to NIfTI using [dcm2niix](https://github.com/rordenlab/dcm2niix).
+
+We can learn how to run `dcm2niix` by taking a look at its help menu.
+~~~
+dcm2niix -help
+~~~
+{: .language-bash}
+
+> ## Converting DICOM to NIfTI
+> Convert the Princeton DICOM data to NIfTI
+>
+> > ## Solution
+> > ~~~
+> > mkdir -p ../data/dicom_examples/nii
+> > dcm2niix -z y -o ../data/dicom_examples ../data/dicom_examples/0219191_mystudy-0219-1114/dcm
+> > ~~~
+> > {: .language-bash}
+> {: .solution}
+{: .challenge}
