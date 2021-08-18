@@ -2,7 +2,7 @@ name: Test notebooks
 
 on:
   push:
-    paths: "*.ipynb"
+    paths: ["*.ipynb", "requirements.txt", "notebook.yml"]
 
 jobs:
   test-notebooks:
@@ -48,4 +48,4 @@ jobs:
     # Run the actual tests of all the Python Notebooks.
     - name: Test Notebooks
       run: |
-        pytest --nbval-lax -v code/*_solutions.ipynb
+        pytest --nbval-lax -v code/*ipynb

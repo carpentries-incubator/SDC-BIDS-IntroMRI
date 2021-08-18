@@ -11,6 +11,7 @@ dependencies:
   - git
   - git-annex
   - datalad=0.14.4
+  - jupyter_contrib_nbextensions
   - matplotlib
   - nibabel
   - nilearn=0.7.1
