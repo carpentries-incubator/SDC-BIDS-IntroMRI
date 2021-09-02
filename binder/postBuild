@@ -1,9 +1,18 @@
+# Install Jupyter extensions and enable Exercise2
+jupyter contrib nbextension install --user
+jupyter nbextension enable exercise2/main
+
 # Download data for DICOM example
 wget https://zenodo.org/record/3677090/files/0219191_mystudy-0219-1114.tar.gz -O data/0219191_mystudy-0219-1114.tar.gz
 mkdir -p data/dicom_examples
 tar -xvzf data/0219191_mystudy-0219-1114.tar.gz -C data/dicom_examples
 gzip -d data/dicom_examples/0219191_mystudy-0219-1114/dcm/*dcm.gz
 rm data/0219191_mystudy-0219-1114.tar.gz
+
+# Convert DICOM to NIfTI
+mkdir -p data/dicom_examples/nii
+dcm2niix -z y -o data/dicom_examples/nii data/dicom_examples/0219191_mystudy-0219-1114/dcm
+rm -fr data/dicom_examples/nii/*scout*
 
 # Set up git
 git config --global --add user.name "Carl Jacobi"
