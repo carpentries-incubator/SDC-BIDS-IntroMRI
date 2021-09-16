@@ -16,15 +16,16 @@ BIDS is a simple and intuitive way to organize and describe your neuroimaging an
 
 Using the same structure for all of your studies will allow you to easily reuse all of your scripts between studies. Additionally, sharing code with other researchers will be much easier.
 
-Why convert the community to BIDS
+## Why convert the community to BIDS?
 
-Share data:
-a common file structure for both computers and humans to understand
-Using file formats/conventions that are most common in neuroimaging
-show completeness of the data right away
+### Share data:
+- A common file structure for both computers and humans to understand
+- Using file formats/conventions that are most common in neuroimaging
+- Show completeness of the data right away
 
-Build better pipelines:
-All the information you need to design a pipeline for a particular dataset is machine readable
-pipelines can be more complex (under the hood) with fewer command-line arguments
+### Build better pipelines:
+- All the information you need to design a pipeline for a particular dataset is machine readable
+- Pipelines can be more complex (under the hood) with fewer command-line arguments
 
-bidsifying your dataset
+### bidsifying your dataset:
+- Convert your (raw) MRI data to the BIDS-compatible dataset format
