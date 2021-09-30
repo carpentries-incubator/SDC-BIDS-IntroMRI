@@ -10,15 +10,13 @@ dependencies:
   - dcm2niix=1.0.20210317
   - git
   - git-annex
-  - datalad=0.14.4
-  - jupyter_contrib_nbextensions
+  - datalad=0.15.1
   - matplotlib
   - nibabel
-  - nilearn=0.7.1
+  - nilearn=0.8.1
   - numpy
   - pandas
 
   - pip:
-      - datalad-installer
       - dcm2bids
       - pybids
