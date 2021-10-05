@@ -34,7 +34,7 @@ First, use the `load()` function to create a NiBabel image object from a NIfTI f
 We'll load in an example T1w image from the zip file we just downloaded.
 
 ~~~
-t1_img = nib.load("../data/dicom_examples/nii/0219191_mystudy-0219-1114_anat_ses-01_T1w_20190219111436_5.nii.gz")
+t1_img = nib.load("../data/dicom_examples/0219191_mystudy-0219-1114/nii/dcm_anat_ses-01_T1w_20190219111436_5.nii.gz")
 ~~~
 {: .language-python}
 
