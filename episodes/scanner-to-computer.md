@@ -90,7 +90,7 @@ dcm2niix -help
 > > ## Solution
 > > ~~~
 > > mkdir -p ../data/dicom_examples/nii
-> > dcm2niix -z y -o ../data/dicom_examples/nii ../data/dicom_examples/0219191_mystudy-0219-1114/dcm
+> > dcm2niix -z y -o ../data/dicom_examples/nii ../data/dicom_examples/0219191_mystudy-0219-1114/
 > > ~~~
 > > {: .language-bash}
 > {: .solution}
