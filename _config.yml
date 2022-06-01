@@ -73,8 +73,9 @@ episode_order:
   - before-we-start
   - scanner-to-computer
   - anatomy-of-nifti
-  - data-organization
+  - data-organization-bids
   - open-mri-datasets
+  - bids-derivatives
 
 # Set the default layout for things in the episodes collection.
 defaults:

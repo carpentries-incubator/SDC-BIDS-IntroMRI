@@ -1,5 +1,5 @@
 ---
-title: "Exploring Open MRI Datasets"
+title: "Exploring open MRI datasets"
 teaching: 30
 exercises: 15
 questions:
