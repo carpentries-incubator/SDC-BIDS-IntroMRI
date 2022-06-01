@@ -50,8 +50,15 @@ Navigate to the folder where you'd like to download the dataset.
 
 `datalad get` downloads any of the "large" data (i.e. NIfTI files) to our filesystem according to the filepath or regular expression we use. These files can also be removed from our filesystem using `datalad drop`.
 
+"Getting" the data is what actually downloads the larger files. 
+
 ```python
-!datalad get ../data/ds000030/sub-10788
+!datalad get ../data/ds000030/sub-10788  
+```
+
+"Dropping" the data deletes the larger datafile - while holding onto enough metadata that confidenty get it back if you need it later.
+
+```python
 !datalad drop ../data/ds000030/sub-10788
 ```
 
