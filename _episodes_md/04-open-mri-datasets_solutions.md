@@ -48,18 +48,22 @@ Navigate to the folder where you'd like to download the dataset.
 !cd ../data && datalad install https://github.com/OpenNeuroDatasets/ds000030.git
 ```
 
-Getting and dropping data
+"Getting" the data is what actually downloads the larger files. 
 
 ```python
 !datalad get ../data/ds000030/sub-10788  
+```
+
+"Dropping" the data deletes the larger datafile - while holding onto enough metadata that confidenty get it back if you need it later.
+
+```python
 !datalad drop ../data/ds000030/sub-10788
 ```
 
-Removing data
+#### if you need to deleted everything and restart...  
 
-```python
-!datalad remove ../data/ds000030
-```
+It happens. Removing the dataset entirely can be done with `datalad remove`. WARNING: Don't `datalad remove` during the workshop as you will need to redownload the dataset using the steps above.
+
 
 ## Exploring a bids dataset
 
