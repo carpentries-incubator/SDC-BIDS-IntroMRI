@@ -30,6 +30,14 @@ In this lesson, we will be using a subset of a publicly available dataset, **ds0
 
 ### DataLad
 
+Datalad is a great tool for "versioning" data. Downloading data using datalad has some advantages over downloading data via other ways:
+
+1. When you download the data, datalad is keeping track of exactly which version of the data you have. Meaning that if somebody updates/fixes that dataset later you can incorporate those fixes quickly.
+2. As datasets are getting bigger, we are getting to the point where all the data may not fit on your computer. Datalad first downloads the "small" data first (instead of the whole thing). So you can see what is there, plan your analysis, and only download the files you need to your local system.
+3. `datalad drop` let's you delete the files you are no longer using from your system - while holding on to the critical metadata that would allow you to report on the data, or re-download it to the same spot if you need it later.
+
+For more information about datalad - check out the [datalad handbook](http://handbook.datalad.org/en/latest/) or [this awesome tutorial video with rabbits!](https://www.youtube.com/watch?v=QsAqnP7TwyY).
+
 `DataLad` installs the data - which for a dataset means that we get the "small" data (i.e. the text files) and the download instructions for the larger files. We can now navigate the dataset like its a file system and plan our analysis.
 
 We'll switch to the terminal for this part.
@@ -47,19 +55,20 @@ Navigate to the folder where you'd like to download the dataset.
 !datalad drop ../data/ds000030/sub-10788
 ```
 
-Removing the dataset entirely can be done with `datalad drop`. WARNING: Don't run the code cell below during the workshop as you will need to redownload the dataset using the steps above.
+#### if you need to deleted everything and restart...  
 
-```python
-!datalad remove ../data/ds000030
-```
+It happens. Removing the dataset entirely can be done with `datalad remove`. WARNING: Don't `datalad remove` during the workshop as you will need to redownload the dataset using the steps above.
 
-## Exploring data
+
+## Exploring a BIDS dataset
 
 Below is a tree diagram showing the folder structure of single MR session within ds000030.
 
 ```python
 !tree ../data/ds000030
 ```
+
+### the participants.tsv
 
 The `participants.tsv` file is meant to describe some demographic information on each participant within your study (eg. age, handedness, sex, etc.) Let's take a look at the `participants.tsv` file to see what's been included in this dataset.
 
@@ -171,7 +180,7 @@ participant_metadata
 
 ```
 
-## Querying a BIDS dataset
+## Querying a BIDS dataset with pyBIDS
 
 
 [pybids](https://bids-standard.github.io/pybids/) is a Python API for querying, summarizing and manipulating the BIDS folder structure.
