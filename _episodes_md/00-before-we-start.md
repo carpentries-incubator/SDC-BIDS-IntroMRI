@@ -15,7 +15,26 @@ jupyter:
 
 This overview have been adapted from the [Data Carpentry Python Lessons with Ecological Data](https://datacarpentry.org/python-ecology-lesson/).
 
-INCLUDE WHAT TO EXPECT IN COMING NOTEBOOKS
+An introduction to working with magnetic resonance imaging (MRI) data in Python.
+
+## About the Lesson
+
+This lesson teaches:
+
+- a (re?) introduction to MR nomenclature - with BIDS
+- how neuroimaging data is stored
+- "converting" your data to BIDS
+- BIDS apps
+- queueing up neuroimaging pipelines
+
+## Episodes
+
+| # |  Episode | Time | Question(s) |
+|--:|:---------|:----:|:------------|
+| 1 | Neuroimaging Fundamentals | 30 | What are the common neuroimaging modalities? |
+| 2 | Anatomy of a NIfTI | 30 | How is MRI data organized in a NIfTI file? |
+| 3 | Brain Imaging Data Structure | 30 | How can I organize my study? |
+| 4 | Open MRI Datasets | 30 | How can I download and query an MRI dataset? |
 
 ## Why Python?
 
