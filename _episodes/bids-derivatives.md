@@ -3,9 +3,13 @@ title: "BIDS derivatives"
 teaching: 30
 exercises: 15
 questions:
-- ""
+- "What are BIDS Apps?"
+- "What are Containers?"
+- 
 objectives:
-- ""
+- "You will learn what are BIDS tools"
+- "How to load a sigularity/dockers?"
+- "You will know how to use BIDS tools"
 keypoints:
 - ""
 ---
@@ -23,6 +27,7 @@ Some examples include:
 - MRtrix3_connectome
 
 They rely on 2 technologies for container computing:
+You can know more about dockers from this link (https://carpentries-incubator.github.io/docker-introduction/)
 - **Docker**
   - for building, hosting, and running containers on local hardware (Windows, Mac OS, Linux) or in the cloud
 - **Singularity**
