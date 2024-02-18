@@ -18,14 +18,14 @@ This lesson teaches:
 
 ## Episodes
 
-| # |  Episode | Time | Question(s) |
-|--:|:---------|:----:|:------------|
-| 1 | [Before we start][episode01] | 30 | What is Python and why should I learn it? |
-| 2 | [From the scanner to our computer][episode02] | 30 | What are the main MRI modalities?<br />What’s the first step necessary to start working with MRI data? |
-| 3 | [Anatomy of a NIfTI][episode03] | 25 | How are MRI data represented digitally? |
-| 4 | [Data organization with BIDS][episode04] | 45 |  |
-| 5 | [Exploring open MRI datasets][episode05] | 45 | How does standardizing neuroimaging data ease the data exploration process |
-| 6 | [BIDS derivatives][episode06] | 45 |  |
+| \#   | Episode | Time | Question(s)                                                                | 
+| --: | :------ | :--: | :------------------------------------------------------------------------- |
+| 1   | [Before we start][episode01]        | 30   | What is Python and why should I learn it?                                  | 
+| 2   | [From the scanner to our computer][episode02]        | 30   | What are the main MRI modalities?<br />What's the first step necessary to start working with MRI data?                                          | 
+| 3   | [Anatomy of a NIfTI][episode03]        | 25   | How are MRI data represented digitally?                                    | 
+| 4   | [Data organization with BIDS][episode04]        | 45   |                                                                            | 
+| 5   | [Exploring open MRI datasets][episode05]        | 45   | How does standardizing neuroimaging data ease the data exploration process | 
+| 6   | [BIDS derivatives][episode06]        | 45   |                                                                            | 
 
 ## Contributing
 
@@ -38,9 +38,9 @@ how to write new episodes.
 
 Please see the current list of [issues][link_issues] for ideas for contributing to this
 repository. For making your contribution, we use the GitHub flow, which is
-nicely explained in the chapter [Contributing to a Project](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project) in Pro Git
+nicely explained in the chapter [Contributing to a Project](https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project) in Pro Git
 by Scott Chacon.
-Look for the tag ![good_first_issue](https://img.shields.io/badge/-good%20first%20issue-gold.svg). This indicates that the maintainers will welcome a pull request fixing this issue.
+Look for the tag ![good\_first\_issue](https://img.shields.io/badge/-good%20first%20issue-gold.svg). This indicates that the maintainers will welcome a pull request fixing this issue.
 
 ## Maintainer(s)
 
@@ -64,12 +64,12 @@ the MIT license. For more information, see [LICENSE](LICENSE.md).
 
 To cite this lesson, please consult with [CITATION](CITATION)
 
-[create_slack_svg]: https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg
 [slack_heroku_invite]: https://swc-slack-invite.herokuapp.com
-[slack_channel_status]: https://img.shields.io/badge/Slack_Channel-neuroimaging-E01563.svg
+[create_slack_svg]: https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg
 [slack_channel_url]: https://swcarpentry.slack.com/messages/CCJBHKCHZ
-[binder_svg]: https://mybinder.org/badge_logo.svg
+[slack_channel_status]: https://img.shields.io/badge/Slack_Channel-neuroimaging-E01563.svg
 [binder_url]: https://mybinder.org/v2/gh/carpentries-incubator/SDC-BIDS-IntroMRI/gh-pages?filepath=code%2F
+[binder_svg]: https://mybinder.org/badge_logo.svg
 [episode01]: https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/before-we-start/index.html
 [episode02]: https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/scanner-to-computer/index.html
 [episode03]: https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/anatomy-of-nifti/index.html
@@ -80,3 +80,6 @@ To cite this lesson, please consult with [CITATION](CITATION)
 [link_issues]: https://github.com/conp-pcno-training/SDC-BIDS-IntroMRI/issues
 [michael_joseph]: https://github.com/josephmje
 [jerrold_jeyachandra]: https://github.com/jerdra
+
+
+

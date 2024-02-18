@@ -10,18 +10,23 @@ This lesson is designed to be run on either a personal computer or in a web-base
 
 The Binder webpage for this lesson can be accessed by clicking the button below.
 
-[![Binder][binder-svg]][binder-repo]
+[![][binder-svg]{alt='Binder'}][binder-repo]
 
 Binder enables you to run the collection of Python notebooks found in the `code` folder.
 All of the software and data used in the lesson are pre-installed in a custom computational environment and no additional software needs to be installed locally.
 
-> ## Binder Tips
-> If using Binder, please be aware that startup can take anywhere from 30 seconds to 10 minutes, depending on your internet connection and how recent the custom environment was used.
-> Also, files can be uploaded to the Binder environment.
-> However, the state of the environment is not permanent.
-> If you are inactive for 10 minutes, the environment will shut down and all data will be lost.
-> You should save any changed files to their computers in order to preserve them.
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Binder Tips
+
+If using Binder, please be aware that startup can take anywhere from 30 seconds to 10 minutes, depending on your internet connection and how recent the custom environment was used.
+Also, files can be uploaded to the Binder environment.
+However, the state of the environment is not permanent.
+If you are inactive for 10 minutes, the environment will shut down and all data will be lost.
+You should save any changed files to their computers in order to preserve them.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Local
 
@@ -35,10 +40,9 @@ Detailed installation instructions for various operating systems can be found on
 
 Pip is the most common package installer for Python. This lesson requires a few additional neuroimaging-specific Python packages that can be installed with:
 
-~~~
+```bash
 pip install nibabel nilearn pybids
-~~~
-{: .language-bash}
+```
 
 ### Install dcm2niix
 
@@ -46,10 +50,9 @@ We will be using the `dcm2niix` software package for converting neuroimaging dat
 Detailed installation instructions for various operating systems can be found on the [dcm2niix README][dcm2niix-install].
 If using the Anaconda Python distribution described earlier, `dcm2niix` can be installed by running:
 
-~~~
+```bash
 conda install -c conda-forge dcm2niix
-~~~
-{: .language-bash}
+```
 
 ### Install DataLad
 
@@ -57,21 +60,19 @@ In order to obtain some of the data that will be used in this lesson, we will be
 Detailed installation instructions for various operating systems can be found in the [Datalad Handbook] [datalad-install].
 Again, if using Anaconda, DataLad can be easily installed by running:
 
-~~~
+```bash
 conda install -c conda-forge datalad
-~~~
-{: .language-bash}
+```
 
 ### Obtain lesson materials
 
 Once DataLad has been installed, create a new folder on your Desktop and download the [ds000030 dataset][ds000030] found on OpenNeuro.
 
-~~~
+```bash
 mkdir ~/Desktop/dc-mri/data
 cd ~/Desktop/dc-mri/data
 datalad clone https://github.com/OpenNeuroDatasets/ds000030.git
-~~~
-{: .language-bash}
+```
 
 ## Launch Python interface
 
@@ -84,71 +85,94 @@ option in the list that is available on your machine. Otherwise, you may use any
 A Jupyter Notebook provides a browser-based interface for working with Python.
 If you installed Anaconda, you can launch a notebook in two ways:
 
-> ## Anaconda Navigator
->
-> 1. Launch Anaconda Navigator.
-> It might ask you if you'd like to send anonymized usage information to Anaconda developers:
-> ![Anaconda Navigator first launch](fig/anaconda-navigator-first-launch.png)
-> Make your choice and click "Ok, and don't show again" button.
->
-> 2. Find the "Notebook" tab and click on the "Launch" button:
-> ![Anaconda Navigator Notebook launch](fig/anaconda-navigator-notebook-launch.png)
-> Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the
-> contents of your Home (or User) folder.
->
-> 3. Navigate to the `data` directory by clicking on the directory names leading to it:
-> `Desktop`, `dc-mri`, then `data`:
-> ![Anaconda Navigator Notebook directory](fig/jupyter-notebook-data-directory.png)
-> 4. Launch the notebook by clicking on the "New" button and then selecting "Python 3":
-> ![Anaconda Navigator Notebook directory](fig/jupyter-notebook-launch-notebook.png)
-{: .solution}
+:::::::::::::::  solution
 
-> ## Command line (Terminal)
->
-> 1\. Navigate to the `data` directory:
->
-> > ## Unix shell
-> > If you're using a Unix shell application, such as Terminal app in macOS, Console or Terminal
-> > in Linux, or [Git Bash][gitbash] on Windows, execute the following command:
-> > ~~~
-> > cd ~/Desktop/dc-mri/data
-> > ~~~
-> > {: .language-bash}
-> {: .solution}
->
-> > ## Command Prompt (Windows)
-> > On Windows, you can use its native Command Prompt program.  The easiest way to start it up is
-> > pressing <kbd>Windows Logo Key</kbd>+<kbd>R</kbd>, entering `cmd`, and hitting
-> > <kbd>Return</kbd>. In the Command Prompt, use the following command to navigate to
-> > the `data` folder:
-> > ~~~
-> > cd /D %userprofile%\Desktop\dc-mri\data
-> > ~~~
-> > {: .language-bash}
-> {: .solution}
->
-> 2\. Start Jupyter server
->
-> > ## Unix shell
-> > ~~~
-> > jupyter notebook
-> > ~~~
-> > {: .language-bash}
-> {: .solution}
->
-> > ## Command Prompt (Windows)
-> > ~~~
-> > python -m notebook
-> > ~~~
-> > {: .language-bash}
-> {: .solution}
->
-> 3\. Launch the notebook by clicking on the "New" button on the right and selecting "Python 3"
-> from the drop-down menu:
-> ![Anaconda Navigator Notebook directory](fig/jupyter-notebook-launch-notebook2.png)
-{: .solution}
+## Anaconda Navigator
 
-&nbsp; <!-- vertical spacer -->
+1. Launch Anaconda Navigator.
+  It might ask you if you'd like to send anonymized usage information to Anaconda developers:
+  ![](fig/anaconda-navigator-first-launch.png){alt='Anaconda Navigator first launch'}
+  Make your choice and click "Ok, and don't show again" button.
+
+2. Find the "Notebook" tab and click on the "Launch" button:
+  ![](fig/anaconda-navigator-notebook-launch.png){alt='Anaconda Navigator Notebook launch'}
+  Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the
+  contents of your Home (or User) folder.
+
+3. Navigate to the `data` directory by clicking on the directory names leading to it:
+  `Desktop`, `dc-mri`, then `data`:
+  ![](fig/jupyter-notebook-data-directory.png){alt='Anaconda Navigator Notebook directory'}
+
+4. Launch the notebook by clicking on the "New" button and then selecting "Python 3":
+  ![](fig/jupyter-notebook-launch-notebook.png){alt='Anaconda Navigator Notebook directory'}
+  
+
+:::::::::::::::::::::::::
+
+:::::::::::::::  solution
+
+## Command line (Terminal)
+
+1\. Navigate to the `data` directory:
+
+:::::::::::::::  solution
+
+## Unix shell
+
+If you're using a Unix shell application, such as Terminal app in macOS, Console or Terminal
+in Linux, or [Git Bash][gitbash] on Windows, execute the following command:
+
+```bash
+cd ~/Desktop/dc-mri/data
+```
+
+:::::::::::::::::::::::::
+
+:::::::::::::::  solution
+
+## Command Prompt (Windows)
+
+On Windows, you can use its native Command Prompt program.  The easiest way to start it up is
+pressing <kbd>Windows Logo Key</kbd>\+<kbd>R</kbd>, entering `cmd`, and hitting
+<kbd>Return</kbd>. In the Command Prompt, use the following command to navigate to
+the `data` folder:
+
+```bash
+cd /D %userprofile%\Desktop\dc-mri\data
+```
+
+:::::::::::::::::::::::::
+
+2\. Start Jupyter server
+
+:::::::::::::::  solution
+
+## Unix shell
+
+```bash
+jupyter notebook
+```
+
+:::::::::::::::::::::::::
+
+:::::::::::::::  solution
+
+## Command Prompt (Windows)
+
+```bash
+python -m notebook
+```
+
+:::::::::::::::::::::::::
+
+3\. Launch the notebook by clicking on the "New" button on the right and selecting "Python 3"
+from the drop-down menu:
+![](fig/jupyter-notebook-launch-notebook2.png){alt='Anaconda Navigator Notebook directory'}
+
+
+:::::::::::::::::::::::::
+
+  <!-- vertical spacer -->
 
 ### Option B: IPython interpreter
 
@@ -158,36 +182,39 @@ various convenience features and commands.  You should have IPython on your syst
 [Anaconda][anaconda-instructions].
 
 To start using IPython, execute:
-~~~
-ipython
-~~~
-{: .language-bash}
 
-&nbsp; <!-- vertical spacer -->
+```bash
+ipython
+```
+
+  <!-- vertical spacer -->
 
 ### Option C: plain-vanilla Python interpreter
 
 To launch a plain-vanilla Python interpreter, execute:
-~~~
+
+```bash
 python
-~~~
-{: .language-bash}
+```
 
-If you are using [Git Bash on Windows][gitbash], you have to call Python _via_ `winpty`:
-~~~
+If you are using [Git Bash on Windows][gitbash], you have to call Python *via* `winpty`:
+
+```bash
 winpty python
-~~~
-{: .language-bash}
+```
 
-[anaconda-install]: https://docs.anaconda.com/anaconda/install
-[anaconda-instructions]: https://carpentries.github.io/workshop-template/#python
-[anaconda-website]: https://www.anaconda.com/
+
+
 [binder-info]: https://mybinder.readthedocs.io/en/latest/index.html
-[binder-svg]: https://mybinder.org/badge_logo.svg
 [binder-repo]: https://mybinder.org/v2/gh/carpentries-incubator/SDC-BIDS-IntroMRI/gh-pages?filepath=code%2F
-[datalad-install]: http://handbook.datalad.org/en/latest/intro/installation.html
+[binder-svg]: https://mybinder.org/badge_logo.svg
+[anaconda-website]: https://www.anaconda.com/
+[anaconda-instructions]: https://carpentries.github.io/workshop-template/#python
+[anaconda-install]: https://docs.anaconda.com/anaconda/install
 [dcm2niix-install]: https://github.com/rordenlab/dcm2niix#install
+[datalad-install]: https://handbook.datalad.org/en/latest/intro/installation.html
 [ds000030]: https://openneuro.org/datasets/ds000030/versions/1.0.0
 [gitbash]: https://gitforwindows.org
 
-{% include links.md %}
+
+
