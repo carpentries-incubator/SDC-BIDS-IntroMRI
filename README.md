@@ -20,10 +20,12 @@ This lesson teaches:
 
 | # |  Episode | Time | Question(s) |
 |--:|:---------|:----:|:------------|
-| 1 | [Neuroimaging Fundamentals][episode01] | 30 | What are the common neuroimaging modalities? |
-| 2 | [Anatomy of a NIfTI][episode02] | 30 | How is MRI data organized in a NIfTI file? |
-| 3 | [Brain Imaging Data Structure][episode03] | 30 | How can I organize my study? |
-| 4 | [Open MRI Datasets][episode04] | 30 | How can I download and query an MRI dataset? |
+| 1 | [Before we start][episode01] | 30 | What is Python and why should I learn it? |
+| 2 | [From the scanner to our computer][episode02] | 30 | What are the main MRI modalities?<br />What’s the first step necessary to start working with MRI data? |
+| 3 | [Anatomy of a NIfTI][episode03] | 25 | How are MRI data represented digitally? |
+| 4 | [Data organization with BIDS][episode04] | 45 |  |
+| 5 | [Exploring open MRI datasets][episode05] | 45 | How does standardizing neuroimaging data ease the data exploration process |
+| 6 | [BIDS derivatives][episode06] | 45 |  |
 
 ## Contributing
 
@@ -68,10 +70,12 @@ To cite this lesson, please consult with [CITATION](CITATION)
 [slack_channel_url]: https://swcarpentry.slack.com/messages/CCJBHKCHZ
 [binder_svg]: https://mybinder.org/badge_logo.svg
 [binder_url]: https://mybinder.org/v2/gh/carpentries-incubator/SDC-BIDS-IntroMRI/gh-pages?filepath=code%2F
-[episode01]: https://github.com/conp-pcno-training/SDC-BIDS-IntroMRI/blob/gh-pages/files/neuroimaging_analysis_at_scale.pptx
-[episode02]: https://github.com/conp-pcno-training/SDC-BIDS-IntroMRI/blob/gh-pages/code/02-anatomy-of-nifti/02-anatomy-of-nifti.ipynb
-[episode03]: https://github.com/conp-pcno-training/SDC-BIDS-IntroMRI/blob/gh-pages/files/neuroimaging_analysis_at_scale.pptx
-[episode04]: https://github.com/conp-pcno-training/SDC-BIDS-IntroMRI/blob/gh-pages/code/04-open-mri-datasets/04-open-mri-datasets.ipynb
+[episode01]: https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/before-we-start/index.html
+[episode02]: https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/scanner-to-computer/index.html
+[episode03]: https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/anatomy-of-nifti/index.html
+[episode04]: https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/data-organization-bids/index.html
+[episode05]: https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/open-mri-datasets/index.html
+[episode06]: https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/bids-derivatives/index.html
 [lesson-example]: https://carpentries.github.io/lesson-example
 [link_issues]: https://github.com/conp-pcno-training/SDC-BIDS-IntroMRI/issues
 [michael_joseph]: https://github.com/josephmje
