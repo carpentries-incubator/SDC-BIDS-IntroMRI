@@ -548,7 +548,10 @@ This is a key component to reproducible analysis and so we'll spend a bit of tim
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- 
+- NIfTI image contain a header, which describes the contents, and the data.
+- The position of the NIfTI data in space is determined by the affine matrix.
+- NIfTI data is a multi-dimensional array of values.
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
