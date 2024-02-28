@@ -466,7 +466,7 @@ internet.</li>
 </div>
 </section></section><section id="aio-scanner-to-computer"><p>Content from <a href="scanner-to-computer.html">From the scanner to our computer</a></p>
 <hr>
-<p>Last updated on 2024-02-18 |
+<p>Last updated on 2024-02-28 |
         
         <a href="https://github.com/carpentries-incubator/SDC-BIDS-IntroMRI/edit/main/episodes/scanner-to-computer.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -621,7 +621,7 @@ help menu.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -641,14 +641,17 @@ help menu.</p>
 <h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
 </h3>
 <div class="callout-content">
-<ul><li>
-</li></ul>
+<ul>
+<li>MRI can capture anatomical (structural), functional, or diffusion
+features.</li>
+<li>A number of file formats exist to store neuroimaging data.</li>
+</ul>
 </div>
 </div>
 </div>
 </section></section><section id="aio-anatomy-of-nifti"><p>Content from <a href="anatomy-of-nifti.html">Anatomy of a NIfTI</a></p>
 <hr>
-<p>Last updated on 2024-02-18 |
+<p>Last updated on 2024-02-28 |
         
         <a href="https://github.com/carpentries-incubator/SDC-BIDS-IntroMRI/edit/main/episodes/anatomy-of-nifti.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1322,8 +1325,13 @@ we’ll spend a bit of time here.</p>
 <h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
 </h3>
 <div class="callout-content">
-<ul><li>
-</li></ul>
+<ul>
+<li>NIfTI image contain a header, which describes the contents, and the
+data.</li>
+<li>The position of the NIfTI data in space is determined by the affine
+matrix.</li>
+<li>NIfTI data is a multi-dimensional array of values.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1413,15 +1421,18 @@ format</li>
 <h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
 </h3>
 <div class="callout-content">
-<ul><li>
-</li></ul>
+<ul>
+<li>BIDS is an organizational principle for neuroimaging data.</li>
+<li>Converting a raw MRI dataset to a BIDS-compatible dataset
+streamlines data processing pipelines.</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 </section></section><section id="aio-open-mri-datasets"><p>Content from <a href="open-mri-datasets.html">Exploring open MRI datasets</a></p>
 <hr>
-<p>Last updated on 2024-02-18 |
+<p>Last updated on 2024-02-28 |
         
         <a href="https://github.com/carpentries-incubator/SDC-BIDS-IntroMRI/edit/main/episodes/open-mri-datasets.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2099,9 +2110,10 @@ probtissue
 </h3>
 <div class="callout-content">
 <ul>
-<li>BIDS is an organizational principle for neuroimaging data</li>
+<li>Public neuroimaging BIDS-compatible data repositories allow for
+pulling data easily.</li>
 <li>PyBIDS is a Python-based tool that allows for easy exploration of
-BIDS-formatted neuroimaging data</li>
+BIDS-formatted neuroimaging data.</li>
 </ul>
 </div>
 </div>
@@ -2193,8 +2205,10 @@ containerized applications that run on BIDS data structures.</p>
 <h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
 </h3>
 <div class="callout-content">
-<ul><li>
-</li></ul>
+<ul>
+<li>BIDS Apps are containerized applications that run on BIDS-compatible
+datasets.</li>
+</ul>
 </div>
 </div>
 </div></section>
