@@ -57,7 +57,8 @@ singularity run --cleanenv \
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- 
+- BIDS Apps are containerized applications that run on BIDS-compatible datasets.
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

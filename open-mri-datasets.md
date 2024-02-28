@@ -198,8 +198,8 @@ df.head()
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- BIDS is an organizational principle for neuroimaging data
-- PyBIDS is a Python-based tool that allows for easy exploration of BIDS-formatted neuroimaging data
+- Public neuroimaging BIDS-compatible data repositories allow for pulling data easily.
+- PyBIDS is a Python-based tool that allows for easy exploration of BIDS-formatted neuroimaging data.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

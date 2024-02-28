@@ -44,7 +44,9 @@ Using the same structure for all of your studies will allow you to easily reuse 
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- 
+- BIDS is an organizational principle for neuroimaging data.
+- Converting a raw MRI dataset to a BIDS-compatible dataset streamlines data processing pipelines.
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

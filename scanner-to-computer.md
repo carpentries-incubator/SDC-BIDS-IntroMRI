@@ -110,7 +110,9 @@ dcm2niix -z y -o ../data/dicom_examples/nii ../data/dicom_examples/0219191_mystu
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
-- 
+- MRI can capture anatomical (structural), functional, or diffusion features.
+- A number of file formats exist to store neuroimaging data.
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
