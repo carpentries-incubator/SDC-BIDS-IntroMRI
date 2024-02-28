@@ -321,18 +321,18 @@ dataset.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/dc-mri/data</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">datalad</span> install ///openneuro/ds000030</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/dc-mri/data</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">datalad</span> install ///openneuro/ds000030</span></code></pre>
 </div>
 <p>Let’s take a look at the <code>participants.tsv</code> file to see
 what the demographics for this dataset look like.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>participant_metadata <span class="op">=</span> pd.read_csv(<span class="st">'../data/ds000030/participants.tsv'</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>participant_metadata</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>participant_metadata <span class="op">=</span> pd.read_csv(<span class="st">'../data/ds000030/participants.tsv'</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>participant_metadata</span></code></pre>
 </div>
 <p><strong>OUTPUT:</strong></p>
 <table border="1" class="table dataframe"><thead><tr style="text-align: right;"><th>
@@ -644,7 +644,7 @@ No_ghost
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>participant_metadata[<span class="st">'diagnosis'</span>].unique()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>participant_metadata[<span class="st">'diagnosis'</span>].unique()</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -661,11 +661,11 @@ ghosting artifact. We’ll need to filter these out as well
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>participant_metadata <span class="op">=</span> participant_metadata[(participant_metadata.diagnosis.isin([<span class="st">'CONTROL'</span>, <span class="st">'SCHZ'</span>])) <span class="op">&amp;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                                            (participant_metadata.T1w <span class="op">==</span> <span class="dv">1</span>) <span class="op">&amp;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                                            (participant_metadata.rest <span class="op">==</span> <span class="dv">1</span>) <span class="op">&amp;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                                            (participant_metadata.ghost_NoGhost <span class="op">==</span> <span class="st">'No_ghost'</span>)]</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>participant_metadata[<span class="st">'diagnosis'</span>].unique()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>participant_metadata <span class="op">=</span> participant_metadata[(participant_metadata.diagnosis.isin([<span class="st">'CONTROL'</span>, <span class="st">'SCHZ'</span>])) <span class="op">&amp;</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>                                            (participant_metadata.T1w <span class="op">==</span> <span class="dv">1</span>) <span class="op">&amp;</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>                                            (participant_metadata.rest <span class="op">==</span> <span class="dv">1</span>) <span class="op">&amp;</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>                                            (participant_metadata.ghost_NoGhost <span class="op">==</span> <span class="st">'No_ghost'</span>)]</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>participant_metadata[<span class="st">'diagnosis'</span>].unique()</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -685,9 +685,9 @@ manipulating the BIDS folder structure.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bids.layout <span class="im">import</span> BIDSLayout</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>layout <span class="op">=</span> BIDSLayout(<span class="st">"~/Desktop/dc-mri/data/ds000030"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="im">from</span> bids.layout <span class="im">import</span> BIDSLayout</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>layout <span class="op">=</span> BIDSLayout(<span class="st">"~/Desktop/dc-mri/data/ds000030"</span>)</span></code></pre>
 </div>
 <p>The pybids layout object indexes the BIDS folder. Indexing can take a
 really long time, especially if you have several subjects, modalities,
@@ -697,9 +697,9 @@ time you want to query the same BIDS folder.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>layout.save(<span class="st">"~/Desktop/dc-mri/data/ds000030/.db"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>layout <span class="op">=</span> BIDSLayout(<span class="st">"~/Desktop/dc-mri/data/ds000030"</span>, database_path<span class="op">=</span><span class="st">"~/Desktop/dc-mri/data/ds000030/.db"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>layout.save(<span class="st">"~/Desktop/dc-mri/data/ds000030/.db"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>layout <span class="op">=</span> BIDSLayout(<span class="st">"~/Desktop/dc-mri/data/ds000030"</span>, database_path<span class="op">=</span><span class="st">"~/Desktop/dc-mri/data/ds000030/.db"</span>)</span></code></pre>
 </div>
 <p>The pybids layout object also lets you query your BIDS dataset
 according to a number of parameters by using a <code>get_*()</code>
@@ -708,7 +708,7 @@ dataset.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>layout.get_subjects()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>layout.get_subjects()</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -729,7 +729,7 @@ dataset.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>layout.get_modalities()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>layout.get_modalities()</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -740,11 +740,11 @@ dataset.</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Task fMRI</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(layout.get_tasks())</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Data types (bold, brainmask, confounds, smoothwm, probtissue, warp...)</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(layout.get_types())</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co">#Task fMRI</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="bu">print</span>(layout.get_tasks())</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co">#Data types (bold, brainmask, confounds, smoothwm, probtissue, warp...)</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="bu">print</span>(layout.get_types())</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -770,7 +770,7 @@ dataset.</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>layout.get_types(modality<span class="op">=</span><span class="st">'func'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>layout.get_types(modality<span class="op">=</span><span class="st">'func'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -781,7 +781,7 @@ dataset.</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>layout.get(task<span class="op">=</span><span class="st">'rest'</span>, <span class="bu">type</span><span class="op">=</span><span class="st">'bold'</span>, extensions<span class="op">=</span><span class="st">'nii.gz'</span>, return_type<span class="op">=</span><span class="st">'file'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>layout.get(task<span class="op">=</span><span class="st">'rest'</span>, <span class="bu">type</span><span class="op">=</span><span class="st">'bold'</span>, extensions<span class="op">=</span><span class="st">'nii.gz'</span>, return_type<span class="op">=</span><span class="st">'file'</span>)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -793,8 +793,8 @@ into a <code>pandas.DataFrame</code> :</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> layout.as_data_frame()</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>df <span class="op">=</span> layout.as_data_frame()</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>df.head()</span></code></pre>
 </div>
 <p><strong>OUTPUT:</strong></p>
 <table border="1" class="table dataframe"><thead><tr style="text-align: right;"><th>
@@ -976,9 +976,9 @@ BIDS-formatted neuroimaging data</li>
   "creativeWorkStatus": "active",
   "url": "https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/open-mri-datasets.html",
   "identifier": "https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/open-mri-datasets.html",
-  "dateCreated": "2024-02-18",
+  "dateCreated": "2024-02-28",
   "dateModified": "2024-02-18",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-02-28"
 }
 
   </script><script>

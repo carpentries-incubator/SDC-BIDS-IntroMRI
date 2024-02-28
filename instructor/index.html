@@ -349,6 +349,7 @@ process
  6. <a href="bids-derivatives.html">BIDS derivatives</a>
 </td>
 <td>
+What are BIDS Apps?<br>What are containers?
 </td>
 </tr><tr><td>
 <span class="visually-hidden">Duration: </span>03h 40m
@@ -369,18 +370,17 @@ a web-based interactive computational environment using <a href="https://mybinde
 </h2>
 <hr class="half-width"><p>The Binder webpage for this lesson can be accessed by clicking the
 button below.</p>
-<p><a href="https://mybinder.org/v2/gh/carpentries-incubator/SDC-BIDS-IntroMRI/gh-pages?filepath=code%2F" class="external-link"><img src="https://mybinder.org/badge_logo.svg" class="figure">{alt=‘Binder’}</a></p>
+<p><a href="https://mybinder.org/v2/gh/carpentries-incubator/SDC-BIDS-IntroMRI/gh-pages?filepath=code%2F" class="external-link"><img src="https://mybinder.org/badge_logo.svg" alt="Binder" class="figure"></a></p>
 <p>Binder enables you to run the collection of Python notebooks found in
 the <code>code</code> folder. All of the software and data used in the
 lesson are pre-installed in a custom computational environment and no
 additional software needs to be installed locally.</p>
-<div id="binder-tips" class="callout callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="binder-tips" class="callout-inner">
-<h3 class="callout-title">Binder Tips<a class="anchor" aria-label="anchor" href="#binder-tips"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="binder-tips">Binder Tips<a class="anchor" aria-label="anchor" href="#binder-tips"></a></h3>
 <div class="callout-content">
 <p>If using Binder, please be aware that startup can take anywhere from
 30 seconds to 10 minutes, depending on your internet connection and how
@@ -414,7 +414,7 @@ be installed with:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install nibabel nilearn pybids</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">pip</span> install nibabel nilearn pybids</span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -429,7 +429,7 @@ README</a>. If using the Anaconda Python distribution described earlier,
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge dcm2niix</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge dcm2niix</span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -443,7 +443,7 @@ running:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge datalad</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge datalad</span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -454,9 +454,9 @@ dataset</a> found on OpenNeuro.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> ~/Desktop/dc-mri/data</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/dc-mri/data</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">datalad</span> clone https://github.com/OpenNeuroDatasets/ds000030.git</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">mkdir</span> ~/Desktop/dc-mri/data</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/dc-mri/data</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="ex">datalad</span> clone https://github.com/OpenNeuroDatasets/ds000030.git</span></code></pre>
 </div>
 </div>
 </section><section id="launch-python-interface"><h2 class="section-heading">Launch Python interface<a class="anchor" aria-label="anchor" href="#launch-python-interface"></a>
@@ -514,7 +514,7 @@ following command:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/dc-mri/data</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/dc-mri/data</span></code></pre>
 </div>
 </div>
 </div>
@@ -535,7 +535,7 @@ navigate to the <code>data</code> folder:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /D %userprofile%<span class="dt">\D</span>esktop<span class="dt">\d</span>c-mri<span class="dt">\d</span>ata</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="bu">cd</span> /D %userprofile%<span class="dt">\D</span>esktop<span class="dt">\d</span>c-mri<span class="dt">\d</span>ata</span></code></pre>
 </div>
 </div>
 </div>
@@ -552,7 +552,7 @@ navigate to the <code>data</code> folder:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> notebook</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">jupyter</span> notebook</span></code></pre>
 </div>
 </div>
 </div>
@@ -568,7 +568,7 @@ navigate to the <code>data</code> folder:</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> notebook</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> notebook</span></code></pre>
 </div>
 </div>
 </div>
@@ -593,7 +593,7 @@ installed <a href="https://carpentries.github.io/workshop-template/#python" clas
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ipython</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">ipython</span></span></code></pre>
 </div>
 <p>  <!-- vertical spacer --></p>
 </div>
@@ -603,7 +603,7 @@ installed <a href="https://carpentries.github.io/workshop-template/#python" clas
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">python</span></span></code></pre>
 </div>
 <p>If you are using <a href="https://gitforwindows.org" class="external-link">Git Bash on
 Windows</a>, you have to call Python <em>via</em>
@@ -611,7 +611,7 @@ Windows</a>, you have to call Python <em>via</em>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">winpty</span> python</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">winpty</span> python</span></code></pre>
 </div>
 </div>
 </section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
@@ -662,9 +662,9 @@ Windows</a>, you have to call Python <em>via</em>
   "creativeWorkStatus": "active",
   "url": "https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/instructor/index.html",
   "identifier": "https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/instructor/index.html",
-  "dateCreated": "2024-02-18",
-  "dateModified": "2024-02-27",
-  "datePublished": "2024-02-27"
+  "dateCreated": "2024-02-28",
+  "dateModified": "2024-02-28",
+  "datePublished": "2024-02-28"
 }
 
   </script><script>

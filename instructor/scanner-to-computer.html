@@ -360,11 +360,11 @@ Handbook for Reproducible Neuroimaging</a>.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://zenodo.org/record/3677090/files/0219191_mystudy-0219-1114.tar.gz <span class="at">-O</span> ../data/0219191_mystudy-0219-1114.tar.gz</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ../data/dicom_examples</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xvzf</span> ../data/0219191_mystudy-0219-1114.tar.gz <span class="at">-C</span> ../data/dicom_examples</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gzip</span> <span class="at">-d</span> ../data/dicom_examples/0219191_mystudy-0219-1114/dcm/<span class="pp">*</span>dcm.gz</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> ../data/0219191_mystudy-0219-1114.tar.gz</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">wget</span> https://zenodo.org/record/3677090/files/0219191_mystudy-0219-1114.tar.gz <span class="at">-O</span> ../data/0219191_mystudy-0219-1114.tar.gz</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ../data/dicom_examples</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xvzf</span> ../data/0219191_mystudy-0219-1114.tar.gz <span class="at">-C</span> ../data/dicom_examples</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">gzip</span> <span class="at">-d</span> ../data/dicom_examples/0219191_mystudy-0219-1114/dcm/<span class="pp">*</span>dcm.gz</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">rm</span> ../data/0219191_mystudy-0219-1114.tar.gz</span></code></pre>
 </div>
 <figure><img src="../fig/dicom_to_nifti.png" alt="dicom-to-nifti" class="figure mx-auto d-block"></figure><p>NIfTI is one of the most ubiquitous file formats for storing
 neuroimaging data. If you’re interested in learning more about NIfTI
@@ -376,7 +376,7 @@ help menu.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-help</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-help</span></span></code></pre>
 </div>
 <div id="converting-dicom-to-nifti" class="callout challenge">
 <div class="callout-square">
@@ -395,13 +395,13 @@ help menu.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ../data/dicom_examples/nii</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-z</span> y <span class="at">-o</span> ../data/dicom_examples/nii ../data/dicom_examples/0219191_mystudy-0219-1114/</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ../data/dicom_examples/nii</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="ex">dcm2niix</span> <span class="at">-z</span> y <span class="at">-o</span> ../data/dicom_examples/nii ../data/dicom_examples/0219191_mystudy-0219-1114/</span></code></pre>
 </div>
 </div>
 </div>
@@ -476,9 +476,9 @@ help menu.</p>
   "creativeWorkStatus": "active",
   "url": "https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/instructor/scanner-to-computer.html",
   "identifier": "https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/instructor/scanner-to-computer.html",
-  "dateCreated": "2024-02-18",
+  "dateCreated": "2024-02-28",
   "dateModified": "2024-02-18",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-02-28"
 }
 
   </script><script>
