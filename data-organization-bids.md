@@ -6,12 +6,17 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- 
+- Become faimiliar with BIDS
+- Convert raw datasets to BIDS-compatible datasets
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- 
+- What is BIDS?
+- Why is it important to structure our datasets coherently?
+- How can we convert raw datasets into BIDS-compatible datasets?
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
