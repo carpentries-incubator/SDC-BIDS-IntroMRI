@@ -6,12 +6,16 @@ exercises: 15
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- 
+- Learn about neuroimaging applications using BIDS data structures
+- Use neuroimaging applications through containers
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
-- 
+- What are BIDS Apps?
+- What are containers?
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
