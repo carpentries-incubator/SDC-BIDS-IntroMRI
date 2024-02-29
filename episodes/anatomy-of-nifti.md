@@ -408,12 +408,10 @@ Next we'll see how to not just pull one voxel but a slice or an array of voxels 
 ## Working with image data
 
 Slicing does exactly what it seems to imply.
-Giving our 3D volume, we pull out a 2D slice of our data.
-Here's an example of slicing from left to right (sagittal slicing):
+Giving our 3D volume, we pull out a 2D **slice** of our data.
 
 ![](fig/T1w.gif)
-
-This gif is a series of 2D images or **slices** moving from left to right.
+From left to right: sagittal, coronal and axial slices.
 
 Let's pull the 10th slice in the x axis.
 
