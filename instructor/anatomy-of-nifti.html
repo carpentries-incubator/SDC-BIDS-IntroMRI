@@ -27,7 +27,7 @@
             <span class="visually-hidden">This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.</span>
           </abbr>
         </span>
-        
+
       </div>
     </div>
     <div class="selector-container">
@@ -56,7 +56,7 @@
             </li>
           </ul></li>
       </div>
-      
+
       <div class="dropdown" id="instructor-dropdown">
         <button class="btn btn-secondary dropdown-toggle bordered-button" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
           <i aria-hidden="true" class="icon" data-feather="eye"></i> Instructor View <i data-feather="chevron-down"></i>
@@ -180,7 +180,7 @@
                 </div><!--/div.accordion-flush-->
               </div><!--div.sidenav-view-selector -->
             </div><!--/div.col -->
-      
+
             <hr></div><!--/div.mobile-row -->
 
           <div class="accordion accordion-flush" id="accordionFlush11">
@@ -199,7 +199,7 @@
     <div class="accordion-header" id="flush-heading1">
         <a href="index.html">Summary and Schedule</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -208,7 +208,7 @@
     <div class="accordion-header" id="flush-heading2">
         <a href="before-we-start.html">1. Before we start</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -217,7 +217,7 @@
     <div class="accordion-header" id="flush-heading3">
         <a href="scanner-to-computer.html">2. From the scanner to our computer</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -231,7 +231,7 @@
         </span>
       </button>
     </div><!--/div.accordion-header-->
-        
+
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#reading-nifti-images">Reading NIfTI images</a></li>
@@ -239,7 +239,7 @@
 <li><a href="#visualizing-the-data">Visualizing the data</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -248,7 +248,7 @@
     <div class="accordion-header" id="flush-heading5">
         <a href="data-organization-bids.html">4. Data organization with BIDS</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -257,7 +257,7 @@
     <div class="accordion-header" id="flush-heading6">
         <a href="open-mri-datasets.html">5. Exploring open MRI datasets</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -266,7 +266,7 @@
     <div class="accordion-header" id="flush-heading7">
         <a href="bids-derivatives.html">6. BIDS derivatives</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -298,10 +298,10 @@
               </div>
             </div>
             <hr class="half-width resources"><a href="../instructor/aio.html">See all in one page</a>
-            
+
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
-            
+
             </div>
           </div><!-- /div.accordion -->
         </div><!-- /div.sidebar-inner -->
@@ -322,20 +322,20 @@
           Previous: From the scanner to
         </a>
         <a class="chapter-link float-end" href="../instructor/data-organization-bids.html" rel="next">
-          Next: Data organization... 
+          Next: Data organization...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Anatomy of a NIfTI</h1>
         <p>Last updated on 2024-02-29 |
-        
+
         <a href="https://github.com/carpentries-incubator/SDC-BIDS-IntroMRI/edit/main/episodes/anatomy-of-nifti.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-        
-        
-        
+
+
+
         <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 25 minutes</p>
-        
+
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -370,8 +370,8 @@ stored</li>
 </div>
 <p>In the last lesson, we introduced the NIfTI. We’ll cover a few
 details to get started working with them.</p>
-<section id="reading-nifti-images"><h2 class="section-heading">Reading NIfTI images<a class="anchor" aria-label="anchor" href="#reading-nifti-images"></a>
-</h2>
+<section><h2 class="section-heading" id="reading-nifti-images">Reading NIfTI images<a class="anchor" aria-label="anchor" href="#reading-nifti-images"></a>
+<a class="anchor" aria-label="anchor" href="#reading-nifti-images"></a></h2>
 <hr class="half-width"><p><a href="https://nipy.org/nibabel/" class="external-link">NiBabel</a> is a Python package
 for reading and writing neuroimaging data. To learn more about how
 NiBabel handles NIfTIs, check out the <a href="https://nipy.org/nibabel/nifti_images.html" class="external-link">Working with NIfTI
@@ -549,7 +549,7 @@ value stored by a given key by typing:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -702,7 +702,7 @@ typing <code>t1_data.</code> followed by <kbd>Tab</kbd>.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -741,7 +741,7 @@ What about the how big each dimension is (shape)?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -815,8 +815,8 @@ item is item 1, the third is item 2, etc.</p>
 at a particular voxel! Next we’ll see how to not just pull one voxel but
 a slice or an array of voxels for visualization and analysis!</p>
 </div>
-</section><section id="working-with-image-data"><h2 class="section-heading">Working with image data<a class="anchor" aria-label="anchor" href="#working-with-image-data"></a>
-</h2>
+</section><section><h2 class="section-heading" id="working-with-image-data">Working with image data<a class="anchor" aria-label="anchor" href="#working-with-image-data"></a>
+<a class="anchor" aria-label="anchor" href="#working-with-image-data"></a></h2>
 <hr class="half-width"><p>Slicing does exactly what it seems to imply. Giving our 3D volume, we
 pull out a 2D <strong>slice</strong> of our data.</p>
 <p><img src="../fig/T1w.gif" class="figure"> From left to right: sagittal, coronal and
@@ -848,7 +848,7 @@ that particular axis.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -876,7 +876,7 @@ that particular axis.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -890,8 +890,8 @@ that particular axis.</p>
 <p>We’ve been slicing and dicing brain images but we have no idea what
 they look like! In the next section we’ll show you how you can visualize
 brain slices!</p>
-</section><section id="visualizing-the-data"><h2 class="section-heading">Visualizing the data<a class="anchor" aria-label="anchor" href="#visualizing-the-data"></a>
-</h2>
+</section><section><h2 class="section-heading" id="visualizing-the-data">Visualizing the data<a class="anchor" aria-label="anchor" href="#visualizing-the-data"></a>
+<a class="anchor" aria-label="anchor" href="#visualizing-the-data"></a></h2>
 <hr class="half-width"><p>We previously inspected the signal intensity of the voxel at
 coordinates (10,20,3). Let’s see what out data looks like when we slice
 it at this location. We’ve already indexed the data at each x, y, and z
@@ -1011,7 +1011,7 @@ matrix.</li>
           Previous: From the scanner to
         </a>
         <a class="chapter-link float-end" href="../instructor/data-organization-bids.html" rel="next">
-          Next: Data organization... 
+          Next: Data organization...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -1022,18 +1022,18 @@ matrix.</li>
       		<footer class="row footer mx-md-3"><hr><div class="col-md-6">
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
-        
+
         <a href="https://github.com/carpentries-incubator/SDC-BIDS-IntroMRI/edit/main/episodes/anatomy-of-nifti.md" class="external-link">Edit on GitHub</a>
-        
+
 	
         | <a href="https://github.com/carpentries-incubator/SDC-BIDS-IntroMRI/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/carpentries-incubator/SDC-BIDS-IntroMRI/" class="external-link">Source</a></p>
 				<p><a href="https://github.com/carpentries-incubator/SDC-BIDS-IntroMRI/blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:team@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
-        
+
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
-        
+
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
         <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.5" class="external-link">sandpaper (0.16.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.3" class="external-link">varnish (1.0.3)</a></p>
 			</div>
@@ -1058,7 +1058,7 @@ matrix.</li>
   "identifier": "https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/instructor/anatomy-of-nifti.html",
   "dateCreated": "2024-06-25",
   "dateModified": "2024-02-29",
-  "datePublished": "2024-07-02"
+  "datePublished": "2024-07-09"
 }
 
   </script><script>
