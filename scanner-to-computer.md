@@ -58,16 +58,18 @@ exercises: 10
 
 <h6 id="fileformats"> Common file formats:</h6>
 
-| Format Name | File Extension | Origin/Group                                  | More info|
-| ----------- | -------------- | --------------------------------------------- |-----------
-| DICOM       | none or `.dc`  | ACR/NEMA Consortium                           |https://www.dicomstandard.org/  |
-| Analyze     | `.img`/`.hdr`   | Analyze Software, Mayo Clinic                 |https://eeg.sourceforge.net/ANALYZE75.pdf|
-| NIfTI       | `.nii`  (or `.nii.gz`) | Neuroimaging Informatics Technology Initiative|https://brainder.org/2012/09/23/the-nifti-file-format/|
-| MINC        | `.mnc`           | Montreal Neurological Institute               |https://www.mcgill.ca/bic/software/minc|
-| NRRD        | `.nrrd`          |                                               |https://teem.sourceforge.net/nrrd/format.html|
-| MGH         |`.mgz`  or `.mgh` (or `.mgh.gz`) | Massachusetts General Hospital|https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/MghFormat|
+| Format Name | File Extension | Origin/Group |
+|-------------|----------------|--------------|
+| [DICOM](https://www.dicomstandard.org/current) | none (*) | ACR/NEMA Consortium |
+| [Analyze](https://eeg.sourceforge.net/ANALYZE75.pdf) | `.img`/`.hdr` | Analyze Software, Mayo Clinic |
+| [NIfTI](https://nifti.nimh.nih.gov/) | `.nii` (**)| Neuroimaging Informatics Technology Initiative |
+| [MINC](https://www.mcgill.ca/bic/software/minc) | `.mnc` | Montreal Neurological Institute |
+| [NRRD](https://teem.sourceforge.net/nrrd/format.html) | `.nrrd` | Gordon L. Kindlmann |
+| [MGH](https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/MghFormat) | `.mgz` or `.mgh` | Massachusetts General Hospital |
 
-
+(*) DICOM files typically have a `.dcm` file extension.
+(**) Some files are typically compressed and their extension may incorporate the corresponding
+compression tool extension (e.g. `.nii.gz`).
 
 From the MRI scanner, images are initially collected in the DICOM format and can be converted to these other formats to make working with the data easier.
 
