@@ -527,7 +527,7 @@ internet.</li>
 </div>
 </section></section><section id="aio-scanner-to-computer"><p>Content from <a href="scanner-to-computer.html">From the scanner to our computer</a></p>
 <hr>
-<p>Last updated on 2024-12-20 |
+<p>Last updated on 2024-12-21 |
 
         <a href="https://github.com/carpentries-incubator/SDC-BIDS-IntroMRI/edit/main/episodes/scanner-to-computer.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -605,62 +605,57 @@ Common file formats:
 </h6>
 <table class="table">
 <colgroup>
-<col width="13%">
-<col width="17%">
-<col width="55%">
-<col width="13%">
+<col width="30%">
+<col width="37%">
+<col width="32%">
 </colgroup>
 <thead><tr class="header">
 <th>Format Name</th>
 <th>File Extension</th>
 <th>Origin/Group</th>
-<th>More info</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>DICOM</td>
-<td>none or <code>.dc</code>
-</td>
+<td><a href="https://www.dicomstandard.org/current" class="external-link">DICOM</a></td>
+<td>none (*)</td>
 <td>ACR/NEMA Consortium</td>
-<td><a href="https://www.dicomstandard.org/" class="external-link uri">https://www.dicomstandard.org/</a></td>
 </tr>
 <tr class="even">
-<td>Analyze</td>
+<td><a href="https://eeg.sourceforge.net/ANALYZE75.pdf" class="external-link">Analyze</a></td>
 <td>
 <code>.img</code>/<code>.hdr</code>
 </td>
 <td>Analyze Software, Mayo Clinic</td>
-<td><a href="https://eeg.sourceforge.net/ANALYZE75.pdf" class="external-link uri">https://eeg.sourceforge.net/ANALYZE75.pdf</a></td>
 </tr>
 <tr class="odd">
-<td>NIfTI</td>
+<td><a href="https://nifti.nimh.nih.gov/" class="external-link">NIfTI</a></td>
 <td>
-<code>.nii</code> (or <code>.nii.gz</code>)</td>
+<code>.nii</code> (**)</td>
 <td>Neuroimaging Informatics Technology Initiative</td>
-<td><a href="https://brainder.org/2012/09/23/the-nifti-file-format/" class="external-link uri">https://brainder.org/2012/09/23/the-nifti-file-format/</a></td>
 </tr>
 <tr class="even">
-<td>MINC</td>
+<td><a href="https://www.mcgill.ca/bic/software/minc" class="external-link">MINC</a></td>
 <td><code>.mnc</code></td>
 <td>Montreal Neurological Institute</td>
-<td><a href="https://www.mcgill.ca/bic/software/minc" class="external-link uri">https://www.mcgill.ca/bic/software/minc</a></td>
 </tr>
 <tr class="odd">
-<td>NRRD</td>
+<td><a href="https://teem.sourceforge.net/nrrd/format.html" class="external-link">NRRD</a></td>
 <td><code>.nrrd</code></td>
-<td></td>
-<td><a href="https://teem.sourceforge.net/nrrd/format.html" class="external-link uri">https://teem.sourceforge.net/nrrd/format.html</a></td>
+<td>Gordon L. Kindlmann</td>
 </tr>
 <tr class="even">
-<td>MGH</td>
+<td><a href="https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/MghFormat" class="external-link">MGH</a></td>
 <td>
-<code>.mgz</code> or <code>.mgh</code> (or
-<code>.mgh.gz</code>)</td>
+<code>.mgz</code> or <code>.mgh</code>
+</td>
 <td>Massachusetts General Hospital</td>
-<td><a href="https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/MghFormat" class="external-link uri">https://surfer.nmr.mgh.harvard.edu/fswiki/FsTutorial/MghFormat</a></td>
 </tr>
 </tbody>
 </table>
+<p>(*) DICOM files typically have a <code>.dcm</code> file extension.
+(**) Some files are typically compressed and their extension may
+incorporate the corresponding compression tool extension
+(e.g. <code>.nii.gz</code>).</p>
 <p>From the MRI scanner, images are initially collected in the DICOM
 format and can be converted to these other formats to make working with
 the data easier.</p>
@@ -704,7 +699,7 @@ help menu.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2333,9 +2328,9 @@ datasets.</li>
   "creativeWorkStatus": "active",
   "url": "https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/aio.html",
   "identifier": "https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/aio.html",
-  "dateCreated": "2024-12-20",
-  "dateModified": "2024-12-20",
-  "datePublished": "2024-12-20"
+  "dateCreated": "2024-12-21",
+  "dateModified": "2024-12-21",
+  "datePublished": "2024-12-21"
 }
 
   </script><script>
