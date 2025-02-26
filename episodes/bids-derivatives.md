@@ -38,7 +38,7 @@ They rely on 2 technologies for container computing:
 - **Singularity**
   - for running containers on high performance compute clusters
 
-![](fig/bids_app.png)
+![](fig/bids_app.png){alt='BIDS App containerization'}
 
 Building a singularity container is as easy as:
 

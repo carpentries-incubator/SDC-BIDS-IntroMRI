@@ -323,13 +323,13 @@ t1_data.ndim
 ```
 
 `t1_data` contains 3 dimensions. You can think of the data as a 3D version of a picture (more accurately, a volume).
-![](fig/numpy_arrays.png)
+![](fig/numpy_arrays.png){alt='NumPy array layouts'}
 
 
 :::::::::::::::::::::::::
 
 While typical 2D pictures are made out of squares called **pixels**, a 3D MR image is made up of 3D cubes called **voxels**.
-![](fig/mri_slices.jpg)  
+![](fig/mri_slices.jpg){alt='MRI slices'}
 What about the how big each dimension is (shape)?
 
 :::::::::::::::  solution
@@ -410,7 +410,7 @@ Next we'll see how to not just pull one voxel but a slice or an array of voxels 
 Slicing does exactly what it seems to imply.
 Giving our 3D volume, we pull out a 2D **slice** of our data.
 
-![](fig/T1w.gif)
+![](fig/T1w.gif){alt='T1w image slices'}
 From left to right: sagittal, coronal and axial slices.
 
 Let's pull the 10th slice in the x axis.
@@ -513,7 +513,7 @@ Depends on how you've constructed the affine matrix, but for the data we're deal
 
 Applying the affine matrix (`t1_affine`) is done through using a *linear map* (matrix multiplication) on voxel coordinates (defined in `t1_data`).
 
-![](fig/coordinate_systems.png)
+![](fig/coordinate_systems.png){alt='Coordinate systems'}
 
 The concept of an affine matrix may seem confusing at first but an example might help gain an intuition:
 
