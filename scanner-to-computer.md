@@ -24,7 +24,7 @@ exercises: 10
 
 ### Anatomical
 
-![](fig/t1t2flairbrain.jpg)
+![](fig/t1t2flairbrain.jpg){alt='T1w, T2w and FLAIR anatomical MRI images'}
 
 *Sourced from [https://case.edu/med/neurology/NR/MRI%20Basics.htm](https://case.edu/med/neurology/NR/MRI%20Basics.htm)*
 
@@ -33,9 +33,9 @@ exercises: 10
 
 ### Functional
 
-![](fig/bold.gif)
+![](fig/bold.gif){alt='BOLD functional MRI image'}
 
-![](fig/fmri_timeseries.png)
+![](fig/fmri_timeseries.png){alt='Functional MRI time series'}
 
 *Sourced from Wagner and Lindquist, 2015*
 
@@ -44,9 +44,9 @@ exercises: 10
 
 ### Diffusion
 
-![](fig/dwi.gif)
+![](fig/dwi.gif){alt='Diffusion MRI images'}
 
-![](fig/dwi_tracts.png)
+![](fig/dwi_tracts.png){alt='Diffusion MRI tractogram'}
 
 *Sourced from [http://brainsuite.org/processing/diffusion/tractography/](https://brainsuite.org/processing/diffusion/tractography/)*
 
