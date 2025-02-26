@@ -43,7 +43,7 @@ t1_img = nib.load("../data/dicom_examples/nii/0219191_mystudy-0219-1114_anat_ses
 ```
 
 Loading in a NIfTI file with `NiBabel` gives us a special type of data object which encodes all the information in the file.Each bit of information is called an **attribute** in Python's terminology.
-To see all of these attributes, type `t1_img.` followed by <kbd>Tab</kbd>.
+To see all these attributes, type `t1_img.` followed by <kbd>Tab</kbd>.
 There are three main attributes that we'll discuss today:
 
 ### 1\. [Header](https://nipy.org/nibabel/nibabel_images.html#the-image-header): contains metadata about the image, such as image dimensions, data type, etc.
@@ -101,7 +101,7 @@ magic           : b'n+1'
 ```
 
 `t1_hdr` is a Python **dictionary**.
-Dictionaries are containers that hold pairs of objects - keys and values. Let's take a look at all of the keys.
+Dictionaries are containers that hold pairs of objects - keys and values. Let's take a look at all the keys.
 Similar to `t1_img` in which attributes can be accessed by typing `t1_img.` followed by <kbd>Tab</kbd>, you can do the same with `t1_hdr`.
 In particular, we'll be using a **method** belonging to `t1_hdr` that will allow you to view the keys associated with it.
 
@@ -308,7 +308,7 @@ In Python, an array is used to store lists of numerical data into something like
 
 ## Check out attributes of the array
 
-How can we see the number of dimensions in the `t1_data` array? Once again, all of the attributes of the array can be seen by typing `t1_data.` followed by <kbd>Tab</kbd>.
+How can we see the number of dimensions in the `t1_data` array? Once again, all the attributes of the array can be seen by typing `t1_data.` followed by <kbd>Tab</kbd>.
 
 :::::::::::::::  solution
 
@@ -323,14 +323,15 @@ t1_data.ndim
 ```
 
 `t1_data` contains 3 dimensions. You can think of the data as a 3D version of a picture (more accurately, a volume).
-![](fig/numpy_arrays.png)
+![](fig/numpy_arrays.png){alt='NumPy array layouts'}
 
 
 :::::::::::::::::::::::::
 
 While typical 2D pictures are made out of squares called **pixels**, a 3D MR image is made up of 3D cubes called **voxels**.
-![](fig/mri_slices.jpg)  
-What about the how big each dimension is (shape)?
+![](fig/mri_slices.jpg){alt='MRI slices'}
+
+What about the size along each dimension (shape)?
 
 :::::::::::::::  solution
 
@@ -356,7 +357,7 @@ That means there are:
 
 voxels in total!
 
-Let's see the type of data inside of the array.
+Let's see the type of data inside the array.
 
 ```python
 t1_data.dtype
@@ -410,7 +411,7 @@ Next we'll see how to not just pull one voxel but a slice or an array of voxels 
 Slicing does exactly what it seems to imply.
 Giving our 3D volume, we pull out a 2D **slice** of our data.
 
-![](fig/T1w.gif)
+![](fig/T1w.gif){alt='T1w image slices'}
 From left to right: sagittal, coronal and axial slices.
 
 Let's pull the 10th slice in the x axis.
@@ -513,11 +514,11 @@ Depends on how you've constructed the affine matrix, but for the data we're deal
 
 Applying the affine matrix (`t1_affine`) is done through using a *linear map* (matrix multiplication) on voxel coordinates (defined in `t1_data`).
 
-![](fig/coordinate_systems.png)
+![](fig/coordinate_systems.png){alt='Coordinate systems'}
 
 The concept of an affine matrix may seem confusing at first but an example might help gain an intuition:
 
-Suppose we have two voxels located at the the following coordinates:
+Suppose we have two voxels located at the following coordinates:
 $(64, 100, 2)$
 
 And we wanted to know what the distances between these two voxels are in terms of real world distances (millimetres).
