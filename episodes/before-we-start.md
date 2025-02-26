@@ -60,7 +60,7 @@ This lesson uses the following folders to keep things organized:
   For example, you can store raw data in files `./data/raw/` and clean data in `./data/clean/`.
 
 - **`code/`**: Use this folder to store your (Python) scripts for data cleaning, analysis, and
-  plotting that you use in this particular project. This folder contains all of the Jupyter notebooks used in the lesson.
+  plotting that you use in this particular project. This folder contains all the Jupyter notebooks used in the lesson.
 
 - **`files/`**: Use this folder to store any miscellaneous outlines, drafts, and other text. This folder contains a set of Powerpoint slides that will be used for parts of the lesson.
 

@@ -23,7 +23,7 @@ exercises: 15
 
 [Brain Imaging Data Structure (BIDS)](https://bids.neuroimaging.io/specification) is a simple and intuitive way to organize and describe your neuroimaging and behavioural data. Neuroimaging experiments result in complicated data that can be arranged in several different ways. BIDS tackles this problem by suggesting a new standard (based on consensus from multiple researchers across the world) for the arrangement of neuroimaging datasets.
 
-Using the same structure for all of your studies will allow you to easily reuse all of your scripts between studies. Additionally, sharing code with other researchers will be much easier.
+Using the same structure for all your studies will allow you to easily reuse all your scripts between studies. Additionally, sharing code with other researchers will be much easier.
 
 ## Why convert the community to BIDS?
 
