@@ -328,7 +328,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Anatomy of a NIfTI</h1>
-        <p>Last updated on 2024-02-29 |
+        <p>Last updated on 2025-02-26 |
 
         <a href="https://github.com/carpentries-incubator/SDC-BIDS-IntroMRI/edit/main/episodes/anatomy-of-nifti.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -390,7 +390,7 @@ zip file we just downloaded.</p>
 <p>Loading in a NIfTI file with <code>NiBabel</code> gives us a special
 type of data object which encodes all the information in the file.Each
 bit of information is called an <strong>attribute</strong> in Python’s
-terminology. To see all of these attributes, type <code>t1_img.</code>
+terminology. To see all these attributes, type <code>t1_img.</code>
 followed by <kbd>Tab</kbd>. There are three main attributes that we’ll
 discuss today:</p>
 <div class="section level3">
@@ -453,7 +453,7 @@ magic           : b'n+1'</code></pre>
 </div>
 <p><code>t1_hdr</code> is a Python <strong>dictionary</strong>.
 Dictionaries are containers that hold pairs of objects - keys and
-values. Let’s take a look at all of the keys. Similar to
+values. Let’s take a look at all the keys. Similar to
 <code>t1_img</code> in which attributes can be accessed by typing
 <code>t1_img.</code> followed by <kbd>Tab</kbd>, you can do the same
 with <code>t1_hdr</code>. In particular, we’ll be using a
@@ -687,8 +687,8 @@ data into something like a table.</p>
 <h3 class="callout-title">Check out attributes of the array</h3>
 <div class="callout-content">
 <p>How can we see the number of dimensions in the <code>t1_data</code>
-array? Once again, all of the attributes of the array can be seen by
-typing <code>t1_data.</code> followed by <kbd>Tab</kbd>.</p>
+array? Once again, all the attributes of the array can be seen by typing
+<code>t1_data.</code> followed by <kbd>Tab</kbd>.</p>
 </div>
 </div>
 </div>
@@ -710,7 +710,7 @@ typing <code>t1_data.</code> followed by <kbd>Tab</kbd>.</p>
 <pre class="output" tabindex="0"><code><span><span class="fl">3</span></span></code></pre>
 </div>
 <p><code>t1_data</code> contains 3 dimensions. You can think of the data
-as a 3D version of a picture (more accurately, a volume). <img src="fig/numpy_arrays.png" class="figure"></p>
+as a 3D version of a picture (more accurately, a volume). <img src="fig/numpy_arrays.png" alt="NumPy array layouts" class="figure"></p>
 </div>
 </div>
 </div>
@@ -726,8 +726,8 @@ as a 3D version of a picture (more accurately, a volume). <img src="fig/numpy_ar
 <div class="callout-content">
 <p>While typical 2D pictures are made out of squares called
 <strong>pixels</strong>, a 3D MR image is made up of 3D cubes called
-<strong>voxels</strong>. <img src="fig/mri_slices.jpg" class="figure"><br>
-What about the how big each dimension is (shape)?</p>
+<strong>voxels</strong>. <img src="fig/mri_slices.jpg" alt="MRI slices" class="figure"></p>
+<p>What about the size along each dimension (shape)?</p>
 </div>
 </div>
 </div>
@@ -757,7 +757,7 @@ respective dimension (x,y,z)</em>. This brain was scanned in 57 slices
 with a resolution of 67 x 56 voxels per slice. That means there are:</p>
 <p><code>57 * 67 * 56 = 213864</code></p>
 <p>voxels in total!</p>
-<p>Let’s see the type of data inside of the array.</p>
+<p>Let’s see the type of data inside the array.</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -813,8 +813,8 @@ a slice or an array of voxels for visualization and analysis!</p>
 </section><section><h2 class="section-heading" id="working-with-image-data">Working with image data<a class="anchor" aria-label="anchor" href="#working-with-image-data"></a></h2>
 <hr class="half-width"><p>Slicing does exactly what it seems to imply. Giving our 3D volume, we
 pull out a 2D <strong>slice</strong> of our data.</p>
-<p><img src="fig/T1w.gif" class="figure"> From left to right: sagittal, coronal and
-axial slices.</p>
+<p><img src="fig/T1w.gif" alt="T1w image slices" class="figure"> From left to right:
+sagittal, coronal and axial slices.</p>
 <p>Let’s pull the 10th slice in the x axis.</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -948,9 +948,9 @@ we’re dealing with it always refers to:</p>
 </ul><p>Applying the affine matrix (<code>t1_affine</code>) is done through
 using a <em>linear map</em> (matrix multiplication) on voxel coordinates
 (defined in <code>t1_data</code>).</p>
-<figure><img src="fig/coordinate_systems.png" class="figure mx-auto d-block"></figure><p>The concept of an affine matrix may seem confusing at first but an
+<figure><img src="fig/coordinate_systems.png" alt="Coordinate systems" class="figure mx-auto d-block"></figure><p>The concept of an affine matrix may seem confusing at first but an
 example might help gain an intuition:</p>
-<p>Suppose we have two voxels located at the the following coordinates:
+<p>Suppose we have two voxels located at the following coordinates:
 <span class="math inline">\((64, 100, 2)\)</span></p>
 <p>And we wanted to know what the distances between these two voxels are
 in terms of real world distances (millimetres). This information cannot
@@ -1047,8 +1047,8 @@ matrix.</li>
   "creativeWorkStatus": "active",
   "url": "https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/anatomy-of-nifti.html",
   "identifier": "https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/anatomy-of-nifti.html",
-  "dateCreated": "2024-12-21",
-  "dateModified": "2024-02-29",
+  "dateCreated": "2025-02-26",
+  "dateModified": "2025-02-26",
   "datePublished": "2025-02-26"
 }
 

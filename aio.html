@@ -370,7 +370,7 @@
         
 <section id="aio-before-we-start"><p>Content from <a href="before-we-start.html">Before we start</a></p>
 <hr>
-<p>Last updated on 2024-02-18 |
+<p>Last updated on 2025-02-26 |
 
         <a href="https://github.com/carpentries-incubator/SDC-BIDS-IntroMRI/edit/main/episodes/before-we-start.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -460,7 +460,7 @@ you can store raw data in files <code>./data/raw/</code> and clean data
 in <code>./data/clean/</code>.</p></li>
 <li><p><strong><code>code/</code></strong>: Use this folder to store
 your (Python) scripts for data cleaning, analysis, and plotting that you
-use in this particular project. This folder contains all of the Jupyter
+use in this particular project. This folder contains all the Jupyter
 notebooks used in the lesson.</p></li>
 <li><p><strong><code>files/</code></strong>: Use this folder to store
 any miscellaneous outlines, drafts, and other text. This folder contains
@@ -527,7 +527,7 @@ internet.</li>
 </div>
 </section></section><section id="aio-scanner-to-computer"><p>Content from <a href="scanner-to-computer.html">From the scanner to our computer</a></p>
 <hr>
-<p>Last updated on 2024-12-21 |
+<p>Last updated on 2025-02-26 |
 
         <a href="https://github.com/carpentries-incubator/SDC-BIDS-IntroMRI/edit/main/episodes/scanner-to-computer.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -567,7 +567,7 @@ represents</li>
 <div class="section level3">
 <h3 id="anatomical">Anatomical<a class="anchor" aria-label="anchor" href="#anatomical"></a>
 </h3>
-<figure><img src="fig/t1t2flairbrain.jpg" class="figure mx-auto d-block"></figure><p><em>Sourced from <a href="https://case.edu/med/neurology/NR/MRI%20Basics.htm" class="external-link">https://case.edu/med/neurology/NR/MRI%20Basics.htm</a></em></p>
+<figure><img src="fig/t1t2flairbrain.jpg" alt="T1w, T2w and FLAIR anatomical MRI images" class="figure mx-auto d-block"></figure><p><em>Sourced from <a href="https://case.edu/med/neurology/NR/MRI%20Basics.htm" class="external-link">https://case.edu/med/neurology/NR/MRI%20Basics.htm</a></em></p>
 <ul>
 <li>3D image of anatomy (i.e., shape, volume, cortical thickness, brain
 region)</li>
@@ -577,7 +577,7 @@ region)</li>
 <div class="section level3">
 <h3 id="functional">Functional<a class="anchor" aria-label="anchor" href="#functional"></a>
 </h3>
-<figure><img src="fig/bold.gif" class="figure mx-auto d-block"></figure><figure><img src="fig/fmri_timeseries.png" class="figure mx-auto d-block"></figure><p><em>Sourced from Wagner and Lindquist, 2015</em></p>
+<figure><img src="fig/bold.gif" alt="BOLD functional MRI image" class="figure mx-auto d-block"></figure><figure><img src="fig/fmri_timeseries.png" alt="Functional MRI time series" class="figure mx-auto d-block"></figure><p><em>Sourced from Wagner and Lindquist, 2015</em></p>
 <ul>
 <li>tracks the blood oxygen level-dependant (BOLD) signal as an analogue
 of brain activity</li>
@@ -587,7 +587,7 @@ of brain activity</li>
 <div class="section level3">
 <h3 id="diffusion">Diffusion<a class="anchor" aria-label="anchor" href="#diffusion"></a>
 </h3>
-<figure><img src="fig/dwi.gif" class="figure mx-auto d-block"></figure><figure><img src="fig/dwi_tracts.png" class="figure mx-auto d-block"></figure><p><em>Sourced from <a href="https://brainsuite.org/processing/diffusion/tractography/" class="external-link">http://brainsuite.org/processing/diffusion/tractography/</a></em></p>
+<figure><img src="fig/dwi.gif" alt="Diffusion MRI images" class="figure mx-auto d-block"></figure><figure><img src="fig/dwi_tracts.png" alt="Diffusion MRI tractogram" class="figure mx-auto d-block"></figure><p><em>Sourced from <a href="https://brainsuite.org/processing/diffusion/tractography/" class="external-link">http://brainsuite.org/processing/diffusion/tractography/</a></em></p>
 <ul>
 <li>measures diffusion of water in order to model tissue
 microstructure</li>
@@ -699,7 +699,7 @@ help menu.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -728,7 +728,7 @@ features.</li>
 </div>
 </section></section><section id="aio-anatomy-of-nifti"><p>Content from <a href="anatomy-of-nifti.html">Anatomy of a NIfTI</a></p>
 <hr>
-<p>Last updated on 2024-02-29 |
+<p>Last updated on 2025-02-26 |
 
         <a href="https://github.com/carpentries-incubator/SDC-BIDS-IntroMRI/edit/main/episodes/anatomy-of-nifti.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -790,7 +790,7 @@ zip file we just downloaded.</p>
 <p>Loading in a NIfTI file with <code>NiBabel</code> gives us a special
 type of data object which encodes all the information in the file.Each
 bit of information is called an <strong>attribute</strong> in Python’s
-terminology. To see all of these attributes, type <code>t1_img.</code>
+terminology. To see all these attributes, type <code>t1_img.</code>
 followed by <kbd>Tab</kbd>. There are three main attributes that we’ll
 discuss today:</p>
 <div class="section level3">
@@ -854,7 +854,7 @@ magic           : b'n+1'</code></pre>
 </div>
 <p><code>t1_hdr</code> is a Python <strong>dictionary</strong>.
 Dictionaries are containers that hold pairs of objects - keys and
-values. Let’s take a look at all of the keys. Similar to
+values. Let’s take a look at all the keys. Similar to
 <code>t1_img</code> in which attributes can be accessed by typing
 <code>t1_img.</code> followed by <kbd>Tab</kbd>, you can do the same
 with <code>t1_hdr</code>. In particular, we’ll be using a
@@ -1091,8 +1091,8 @@ data into something like a table.</p>
 <h3 class="callout-title">Check out attributes of the array</h3>
 <div class="callout-content">
 <p>How can we see the number of dimensions in the <code>t1_data</code>
-array? Once again, all of the attributes of the array can be seen by
-typing <code>t1_data.</code> followed by <kbd>Tab</kbd>.</p>
+array? Once again, all the attributes of the array can be seen by typing
+<code>t1_data.</code> followed by <kbd>Tab</kbd>.</p>
 </div>
 </div>
 </div>
@@ -1114,7 +1114,7 @@ typing <code>t1_data.</code> followed by <kbd>Tab</kbd>.</p>
 <pre class="output" tabindex="0"><code><span><span class="fl">3</span></span></code></pre>
 </div>
 <p><code>t1_data</code> contains 3 dimensions. You can think of the data
-as a 3D version of a picture (more accurately, a volume). <img src="fig/numpy_arrays.png" class="figure"></p>
+as a 3D version of a picture (more accurately, a volume). <img src="fig/numpy_arrays.png" alt="NumPy array layouts" class="figure"></p>
 </div>
 </div>
 </div>
@@ -1130,8 +1130,8 @@ as a 3D version of a picture (more accurately, a volume). <img src="fig/numpy_ar
 <div class="callout-content">
 <p>While typical 2D pictures are made out of squares called
 <strong>pixels</strong>, a 3D MR image is made up of 3D cubes called
-<strong>voxels</strong>. <img src="fig/mri_slices.jpg" class="figure"><br>
-What about the how big each dimension is (shape)?</p>
+<strong>voxels</strong>. <img src="fig/mri_slices.jpg" alt="MRI slices" class="figure"></p>
+<p>What about the size along each dimension (shape)?</p>
 </div>
 </div>
 </div>
@@ -1161,7 +1161,7 @@ respective dimension (x,y,z)</em>. This brain was scanned in 57 slices
 with a resolution of 67 x 56 voxels per slice. That means there are:</p>
 <p><code>57 * 67 * 56 = 213864</code></p>
 <p>voxels in total!</p>
-<p>Let’s see the type of data inside of the array.</p>
+<p>Let’s see the type of data inside the array.</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1219,8 +1219,8 @@ a slice or an array of voxels for visualization and analysis!</p>
 <hr class="half-width">
 <p>Slicing does exactly what it seems to imply. Giving our 3D volume, we
 pull out a 2D <strong>slice</strong> of our data.</p>
-<p><img src="fig/T1w.gif" class="figure"> From left to right: sagittal, coronal and
-axial slices.</p>
+<p><img src="fig/T1w.gif" alt="T1w image slices" class="figure"> From left to right:
+sagittal, coronal and axial slices.</p>
 <p>Let’s pull the 10th slice in the x axis.</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1363,9 +1363,9 @@ we’re dealing with it always refers to:</p>
 <p>Applying the affine matrix (<code>t1_affine</code>) is done through
 using a <em>linear map</em> (matrix multiplication) on voxel coordinates
 (defined in <code>t1_data</code>).</p>
-<figure><img src="fig/coordinate_systems.png" class="figure mx-auto d-block"></figure><p>The concept of an affine matrix may seem confusing at first but an
+<figure><img src="fig/coordinate_systems.png" alt="Coordinate systems" class="figure mx-auto d-block"></figure><p>The concept of an affine matrix may seem confusing at first but an
 example might help gain an intuition:</p>
-<p>Suppose we have two voxels located at the the following coordinates:
+<p>Suppose we have two voxels located at the following coordinates:
 <span class="math inline">\((64, 100, 2)\)</span></p>
 <p>And we wanted to know what the distances between these two voxels are
 in terms of real world distances (millimetres). This information cannot
@@ -1411,7 +1411,7 @@ matrix.</li>
 </div>
 </section></section><section id="aio-data-organization-bids"><p>Content from <a href="data-organization-bids.html">Data organization with BIDS</a></p>
 <hr>
-<p>Last updated on 2024-02-28 |
+<p>Last updated on 2025-02-26 |
 
         <a href="https://github.com/carpentries-incubator/SDC-BIDS-IntroMRI/edit/main/episodes/data-organization-bids.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1452,8 +1452,8 @@ experiments result in complicated data that can be arranged in several
 different ways. BIDS tackles this problem by suggesting a new standard
 (based on consensus from multiple researchers across the world) for the
 arrangement of neuroimaging datasets.</p>
-<p>Using the same structure for all of your studies will allow you to
-easily reuse all of your scripts between studies. Additionally, sharing
+<p>Using the same structure for all your studies will allow you to
+easily reuse all your scripts between studies. Additionally, sharing
 code with other researchers will be much easier.</p>
 <section><h2 class="section-heading" id="why-convert-the-community-to-bids">Why convert the community to BIDS?<a class="anchor" aria-label="anchor" href="#why-convert-the-community-to-bids"></a>
 </h2>
@@ -2192,7 +2192,7 @@ BIDS-formatted neuroimaging data.</li>
 </div>
 </section></section><section id="aio-bids-derivatives"><p>Content from <a href="bids-derivatives.html">BIDS derivatives</a></p>
 <hr>
-<p>Last updated on 2024-02-28 |
+<p>Last updated on 2025-02-26 |
 
         <a href="https://github.com/carpentries-incubator/SDC-BIDS-IntroMRI/edit/main/episodes/bids-derivatives.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2253,7 +2253,7 @@ containerized applications that run on BIDS data structures.</p>
 </ul>
 </li>
 </ul>
-<figure><img src="fig/bids_app.png" class="figure mx-auto d-block"></figure><p>Building a singularity container is as easy as:</p>
+<figure><img src="fig/bids_app.png" alt="BIDS App containerization" class="figure mx-auto d-block"></figure><p>Building a singularity container is as easy as:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -2328,7 +2328,7 @@ datasets.</li>
   "creativeWorkStatus": "active",
   "url": "https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/aio.html",
   "identifier": "https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/aio.html",
-  "dateCreated": "2024-12-21",
+  "dateCreated": "2025-02-26",
   "dateModified": "2025-02-26",
   "datePublished": "2025-02-26"
 }
