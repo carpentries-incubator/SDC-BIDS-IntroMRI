@@ -1,0 +1,54 @@
+cff-version: 1.2.0
+title: Introduction to Working with MRI Data in Python
+message: >-
+  Please cite this lesson using the information in this file
+  when you refer to it in publications, and/or if you
+  re-use, adapt, or expand on the content in your own
+  training material.
+type: dataset
+authors:
+  - given-names: Erin W.
+    family-names: Dickie
+    orcid: 'https://orcid.org/0000-0003-3028-9864'
+    affiliation: >-
+      Krembil Centre for Neuroinformatics, Centre for
+      Addiction and Mental Health
+  - given-names: Toby
+    family-names: Hodges
+    orcid: 'https://orcid.org/0000-0003-1766-456X'
+    affiliation: The Carpentries
+  - given-names: Jerrold
+    family-names: Jeyachandra
+    affiliation: >-
+      Krembil Centre for Neuroinformatics, Centre for
+      Addiction and Mental Health
+  - given-names: Michael
+    family-names: Joseph
+    affiliation: >-
+      Krembil Centre for Neuroinformatics, Centre for
+      Addiction and Mental Health
+  - given-names: Jon Haitz
+    family-names: Legarreta Gorroño
+    orcid: 'https://orcid.org/0000-0002-9661-1396'
+    affiliation: Université de Sherbrooke
+  - given-names: 'Candace Makeda'
+    family-names: Moore
+    orcid: 'https://orcid.org/0000-0003-1672-7565'
+    affiliation: Erasmus University Medical Center
+  - given-names: Abigail
+    family-names: Noyce
+    orcid: 'https://orcid.org/0000-0002-4339-4113'
+    affiliation: 'Neuroscience Institute, Carnegie Mellon University'
+  - given-names: Jean-Baptiste
+    family-names: Poline
+    orcid: 'https://orcid.org/0000-0002-9794-749X'
+    affiliation: McGill University
+  - given-names: Annajiat Alim
+    family-names: Rasel
+    orcid: 'https://orcid.org/0000-0003-0198-3734'
+    affiliation: BRAC University
+  - given-names: David J.
+    family-names: Rotenberg
+    affiliation: >-
+      Krembil Centre for Neuroinformatics, Centre for
+      Addiction and Mental Health
