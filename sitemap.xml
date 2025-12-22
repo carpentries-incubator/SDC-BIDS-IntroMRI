@@ -22,6 +22,9 @@
     <loc>https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/bids-derivatives.html</loc>
   </url>
   <url>
+    <loc>https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/citation.html</loc>
+  </url>
+  <url>
     <loc>https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/data-organization-bids.html</loc>
   </url>
   <url>
@@ -53,6 +56,9 @@
   </url>
   <url>
     <loc>https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/instructor/bids-derivatives.html</loc>
+  </url>
+  <url>
+    <loc>https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/instructor/citation.html</loc>
   </url>
   <url>
     <loc>https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/instructor/data-organization-bids.html</loc>
